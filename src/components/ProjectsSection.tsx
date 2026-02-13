@@ -32,7 +32,7 @@ const ProjectsSection = () => {
           </div>
 
           <h2 className="text-3xl font-bold mb-2 tracking-tight font-display">ZenTrade Platform</h2>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md">Redesigned navigation and dashboards for complex B2B workflows. Led end-to-end UI design.</p>
+          <p className="text-muted-foreground text-sm mb-6 max-w-md">Redesigned dashboards and navigation to simplify complex B2B trading workflows and improve usability.</p>
 
           <button className="bg-accent text-accent-foreground px-5 py-2.5 rounded-full flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors">
             <PlayCircle className="w-4 h-4 fill-current" strokeWidth={1.5} />

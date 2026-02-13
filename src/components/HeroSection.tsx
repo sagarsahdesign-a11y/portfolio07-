@@ -32,7 +32,7 @@ const HeroSection = () => {
             className="flex flex-col lg:flex-row items-center gap-6 mb-10"
           >
             <p className="text-muted-foreground max-w-xs text-sm leading-relaxed font-medium">
-              Sagar Sah is a multidisciplinary Product Designer &amp; Cyber Security Student bridging aesthetic UI and secure code.
+              Product designer combining UI/UX expertise with a technical background in Cyber Security. 9k+ followers sharing practical design insights.
             </p>
             <div className="hidden lg:flex w-12 h-12 border-2 border-foreground rounded-full items-center justify-center">
               <Award className="w-6 h-6" strokeWidth={1.5} />

@@ -1,11 +1,9 @@
-import { Dribbble, Twitter, Twitch, Facebook, Instagram, Play } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Play } from "lucide-react";
 
 const socialLinks = [
-  { icon: Dribbble, href: "#", bg: "bg-primary", text: "text-[hsl(340,82%,52%)]", border: "" },
-  { icon: Twitter, href: "#", bg: "bg-[hsl(203,89%,53%)]", text: "text-foreground", border: "border-4 border-primary" },
-  { icon: Twitch, href: "#", bg: "bg-[hsl(264,100%,64%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
-  { icon: Facebook, href: "#", bg: "bg-[hsl(214,89%,52%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
-  { icon: Instagram, href: "#", bg: "bg-[hsl(340,75%,54%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/", bg: "bg-[hsl(201,100%,35%)]", text: "text-foreground", border: "border-4 border-primary" },
+  { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1", bg: "bg-[hsl(340,75%,54%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
+  { icon: Twitter, href: "https://x.com/Sagarshahas", bg: "bg-[hsl(0,0%,10%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
 ];
 
 const Footer = () => {
@@ -24,14 +22,11 @@ const Footer = () => {
                 <a
                   key={i}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-16 h-16 ${s.bg} rounded-2xl flex items-center justify-center ${s.text} hover:scale-110 transition-transform shadow-lg ${s.border} relative`}
                 >
                   <Icon className="w-8 h-8 fill-current" strokeWidth={1.5} />
-                  {i === 1 && (
-                    <div className="absolute -bottom-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-md">
-                      <Play className="w-3 h-3 text-[hsl(203,89%,53%)] fill-current ml-0.5" strokeWidth={1.5} />
-                    </div>
-                  )}
                 </a>
               );
             })}

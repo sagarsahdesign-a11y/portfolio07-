@@ -2,10 +2,10 @@ import { Briefcase, Monitor, GraduationCap, Award, MapPin, ExternalLink, Chevron
 import { motion } from "framer-motion";
 
 const experienceData = [
-  { year: "2024", icon: Briefcase, title: "Freelance UI/UX", location: "Remote", locationIcon: MapPin, tag: "Design", highlighted: false },
-  { year: "2023", icon: Monitor, title: "Web Designer", location: "Remote", locationIcon: MapPin, tag: "Frontend", highlighted: false },
-  { year: "2023-27", icon: GraduationCap, title: "B.Tech Cyber Security", location: "GIET College", locationIcon: MapPin, tag: "Education", highlighted: true },
-  { year: "2024", icon: Award, title: "Figma Mastery", location: "Certification", locationIcon: ExternalLink, tag: "Skills", highlighted: false },
+  { year: "2024–Now", icon: Briefcase, title: "Freelance Product Designer", location: "Remote", locationIcon: MapPin, tag: "Design", highlighted: false },
+  { year: "2023–2024", icon: Monitor, title: "Freelance UI Designer", location: "Remote", locationIcon: MapPin, tag: "Frontend", highlighted: false },
+  { year: "2023–2027", icon: GraduationCap, title: "B.Tech Cyber Security", location: "GIET College", locationIcon: MapPin, tag: "Education", highlighted: true },
+  { year: "2024", icon: Award, title: "UI/UX Certifications", location: "Figma, XD, Framer", locationIcon: ExternalLink, tag: "Certs", highlighted: false },
 ];
 
 const ExperienceSection = () => {

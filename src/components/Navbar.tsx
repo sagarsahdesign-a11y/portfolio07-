@@ -1,4 +1,4 @@
-import { Facebook, Youtube, Twitter } from "lucide-react";
+import { Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -24,11 +24,18 @@ const Navbar = () => {
 
       {/* Social */}
       <div className="flex items-center gap-3">
-        {[Facebook, Youtube, Twitter].map((Icon, i) => (
-          <a key={i} href="#" className="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
-            <Icon className="w-4 h-4 fill-current" strokeWidth={1.5} />
-          </a>
-        ))}
+        {[
+          { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/" },
+          { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1" },
+          { icon: Twitter, href: "https://x.com/Sagarshahas" },
+        ].map((s, i) => {
+          const Icon = s.icon;
+          return (
+            <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+              <Icon className="w-4 h-4 fill-current" strokeWidth={1.5} />
+            </a>
+          );
+        })}
       </div>
     </nav>
   );

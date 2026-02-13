@@ -21,7 +21,7 @@ const BuildingSection = () => {
 
           <h2 className="text-4xl md:text-6xl font-bold mb-4 font-condensed tracking-tight">BUILDING IN<br />PUBLIC</h2>
           <p className="text-muted-foreground max-w-md mb-8">
-            I share daily UI/UX content, case studies, and design tips on LinkedIn &amp; Instagram.
+            I share daily UI/UX content, case studies, and design tips with 9k+ followers on LinkedIn &amp; Instagram.
           </p>
 
           <a
