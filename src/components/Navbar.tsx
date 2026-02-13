@@ -1,8 +1,24 @@
-import { Linkedin, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Instagram, Twitter, Menu, X } from "lucide-react";
+import { useState } from "react";
+
+const navLinks = [
+  { label: "Works", href: "#projects" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socialLinks = [
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/" },
+  { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1" },
+  { icon: Twitter, href: "https://x.com/Sagarshahas" },
+];
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="md:px-12 flex flex-col md:flex-row gap-6 z-50 w-full pt-8 pr-6 pl-6 relative items-center justify-between">
+    <nav className="md:px-12 flex flex-wrap gap-6 z-50 w-full pt-8 pr-6 pl-6 relative items-center justify-between">
       {/* Logo */}
       <a href="#" className="bg-primary text-primary-foreground px-4 py-3 rounded-lg flex items-center gap-3 shadow-lg hover:scale-105 transition-transform">
         <div className="flex flex-col items-center justify-center leading-none border-r-2 border-primary-foreground/20 pr-3">
@@ -14,21 +30,18 @@ const Navbar = () => {
         </div>
       </a>
 
-      {/* Menu */}
+      {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-10 font-bold text-xs tracking-widest uppercase text-foreground/90">
-        <a href="#projects" className="hover:text-foreground hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">Works</a>
-        <a href="#about" className="hover:text-foreground hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">About</a>
-        <a href="#skills" className="hover:text-foreground hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">Skills</a>
-        <a href="#contact" className="hover:text-foreground hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">Contact</a>
+        {navLinks.map((l) => (
+          <a key={l.label} href={l.href} className="hover:text-foreground hover:underline decoration-2 underline-offset-4 decoration-accent transition-all">
+            {l.label}
+          </a>
+        ))}
       </div>
 
-      {/* Social */}
-      <div className="flex items-center gap-3">
-        {[
-          { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/" },
-          { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1" },
-          { icon: Twitter, href: "https://x.com/Sagarshahas" },
-        ].map((s, i) => {
+      {/* Desktop Social */}
+      <div className="hidden md:flex items-center gap-3">
+        {socialLinks.map((s, i) => {
           const Icon = s.icon;
           return (
             <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
@@ -37,6 +50,41 @@ const Navbar = () => {
           );
         })}
       </div>
+
+      {/* Mobile Hamburger */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="md:hidden w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+        aria-label="Toggle menu"
+      >
+        {open ? <X className="w-5 h-5" strokeWidth={1.5} /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}
+      </button>
+
+      {/* Mobile Menu Dropdown */}
+      {open && (
+        <div className="md:hidden w-full bg-card rounded-2xl p-6 flex flex-col gap-4 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+          {navLinks.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="font-bold text-sm tracking-widest uppercase text-foreground hover:text-primary transition-colors py-2 border-b border-foreground/10 last:border-0"
+            >
+              {l.label}
+            </a>
+          ))}
+          <div className="flex items-center gap-3 pt-2">
+            {socialLinks.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-dark flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all">
+                  <Icon className="w-4 h-4 fill-current" strokeWidth={1.5} />
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
