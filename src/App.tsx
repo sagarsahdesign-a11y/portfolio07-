@@ -31,7 +31,7 @@ const App = () => (
         <div className="relative z-10">
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename="/portfolio07-/">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/testimonials" element={<TestimonialsSection />} />
