@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TestimonialsSection from "./components/TestimonialsSection";
 
+import portalImg from "@/assets/portal.png";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -18,7 +20,7 @@ const App = () => (
         <div
           className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
           style={{
-            backgroundImage: "url('/portfolio07-/portal.png')",
+            backgroundImage: `url(${portalImg})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
             backgroundSize: "cover",

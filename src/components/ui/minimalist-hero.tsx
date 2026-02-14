@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import vortexBg from "@/assets/vortex-bg.png";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -114,7 +116,7 @@ export function MinimalistHero({
                 }}
             >
                 <img
-                    src="/portfolio07-/vortex-bg.png"
+                    src={vortexBg}
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover"
