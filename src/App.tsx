@@ -18,7 +18,7 @@ const App = () => (
         <div
           className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
           style={{
-            backgroundImage: "url('/portal.png')",
+            backgroundImage: "url('/portfolio07-/portal.png')",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
             backgroundSize: "cover",

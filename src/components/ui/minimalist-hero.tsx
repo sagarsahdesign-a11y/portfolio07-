@@ -114,7 +114,7 @@ export function MinimalistHero({
                 }}
             >
                 <img
-                    src="/vortex-bg.png"
+                    src="/portfolio07-/vortex-bg.png"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover"
