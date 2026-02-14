@@ -1,85 +1,125 @@
-import { Briefcase, Monitor, GraduationCap, Award, MapPin, ExternalLink, ChevronRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
-const experienceData = [
-  { year: "2024–Now", icon: Briefcase, title: "Freelance Product Designer", location: "Remote", locationIcon: MapPin, tag: "Design", highlighted: false },
-  { year: "2023–2024", icon: Monitor, title: "Freelance UI Designer", location: "Remote", locationIcon: MapPin, tag: "Frontend", highlighted: false },
-  { year: "2023–2027", icon: GraduationCap, title: "B.Tech Cyber Security", location: "GIET College", locationIcon: MapPin, tag: "Education", highlighted: true },
-  { year: "2024", icon: Award, title: "UI/UX Certifications", location: "Figma, XD, Framer", locationIcon: ExternalLink, tag: "Certs", highlighted: false },
+const experience = [
+  {
+    year: "2024 – Present",
+    title: "Freelance Product Designer",
+    company: "Remote",
+    type: "Work",
+    responsibilities: [
+      "Led UX redesigns for B2B SaaS platforms focusing on security and developer collaboration",
+      "Conducted usability testing and implemented accessibility standards (WCAG AA)",
+      "Delivered production-ready Figma files with component libraries and design tokens",
+    ],
+  },
+  {
+    year: "2023 – 2024",
+    title: "Freelance UI Designer",
+    company: "Remote",
+    type: "Work",
+    responsibilities: [
+      "Designed mobile-first web interfaces for e-commerce and content platforms",
+      "Created responsive designs with focus on cross-platform consistency",
+      "Collaborated with frontend developers for seamless implementation",
+    ],
+  },
+  {
+    year: "2023 – 2027",
+    title: "B.Tech in Cyber Security",
+    company: "GIET College",
+    type: "Education",
+    responsibilities: [
+      "Specialized in security-first UX patterns and authentication flows",
+      "Applied technical knowledge to design secure, developer-friendly interfaces",
+    ],
+  },
+  {
+    year: "2024",
+    title: "UI/UX Design Certifications",
+    company: "Figma, Adobe XD, Framer",
+    type: "Certifications",
+    responsibilities: [
+      "Advanced Figma: Auto-layout, components, and design systems",
+      "Framer: Interactive prototyping and animations",
+    ],
+  },
 ];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="max-w-5xl mx-auto px-6 pb-24">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 font-condensed uppercase tracking-tight">Experience &amp; Education</h2>
-        <div className="inline-flex bg-brand-darker p-1 rounded-full">
-          <button className="px-8 py-2 bg-primary text-primary-foreground rounded-full text-xs font-bold uppercase tracking-wide shadow-md">Work</button>
-          <button className="px-8 py-2 text-foreground/70 hover:text-foreground rounded-full text-xs font-bold uppercase tracking-wide transition-colors">Education</button>
-          <button className="px-8 py-2 text-foreground/70 hover:text-foreground rounded-full text-xs font-bold uppercase tracking-wide transition-colors">Certs</button>
+    <section id="experience" className="relative py-28 md:py-36">
+      <div className="max-w-4xl mx-auto px-6 md:px-12">
+        {/* Section Header */}
+        <div className="mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="section-label mb-4 block"
+          >
+            Background
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-white"
+          >
+            Experience & Education
+          </motion.h2>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-2">
-        {experienceData.map((item, i) => {
-          const Icon = item.icon;
-          const LocIcon = item.locationIcon;
-
-          if (item.highlighted) {
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1.02 }}
-                viewport={{ once: true }}
-                className="flex flex-col md:flex-row items-center p-4 md:h-24 rounded-xl bg-primary text-primary-foreground shadow-xl z-10 cursor-pointer relative overflow-hidden"
-              >
-                <div className="w-full md:w-24 text-xs font-bold opacity-60 mb-2 md:mb-0">{item.year}</div>
-                <div className="w-full md:w-16 mb-2 md:mb-0">
-                  <div className="w-10 h-10 bg-background rounded-full flex items-center justify-center text-foreground">
-                    <Icon className="w-5 h-5" strokeWidth={1.5} />
-                  </div>
-                </div>
-                <div className="flex-1 font-bold text-lg md:text-2xl w-full text-center md:text-left mb-1 md:mb-0 tracking-tight font-display">{item.title}</div>
-                <div className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-start opacity-60 text-xs font-bold uppercase tracking-wider mb-2 md:mb-0">
-                  <LocIcon className="w-3 h-3" strokeWidth={1.5} /> {item.location}
-                </div>
-                <div className="w-full md:w-48 flex justify-center md:justify-end gap-2 mb-2 md:mb-0">
-                  <span className="bg-accent text-accent-foreground px-3 py-1 rounded text-[10px] font-bold uppercase">{item.tag}</span>
-                </div>
-                <div className="w-10 flex justify-end">
-                  <Play className="w-4 h-4 fill-current ml-0.5" strokeWidth={1.5} />
-                </div>
-              </motion.div>
-            );
-          }
-
-          return (
+        {/* Timeline */}
+        <div className="space-y-0">
+          {experience.map((item, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="group flex flex-col md:flex-row items-center p-4 md:h-20 rounded-xl transition-all duration-300 hover:bg-primary hover:text-primary-foreground cursor-pointer border-b border-foreground/10 hover:border-transparent"
+              transition={{ delay: index * 0.06, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative pl-8 border-l border-white/[0.05] pb-12 last:pb-0"
             >
-              <div className="w-full md:w-24 text-xs font-bold opacity-60 mb-2 md:mb-0">{item.year}</div>
-              <div className="w-full md:w-16 mb-2 md:mb-0">
-                <Icon className="w-6 h-6 group-hover:text-accent transition-colors" strokeWidth={1.5} />
+              {/* Timeline dot with subtle glow */}
+              <div
+                className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500/70 border-2 border-[#080B14]"
+                style={{
+                  boxShadow: "0 0 8px rgba(37,99,235,0.3)",
+                }}
+              />
+
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span className="text-sm font-medium text-[#8B95A5]">
+                  {item.year}
+                </span>
+                <span className="text-[10px] font-semibold px-2 py-0.5 bg-white/[0.04] text-white/40 rounded border border-white/[0.06] tracking-[0.08em] uppercase">
+                  {item.type}
+                </span>
               </div>
-              <div className="flex-1 font-bold text-lg md:text-xl w-full text-center md:text-left mb-1 md:mb-0 tracking-tight">{item.title}</div>
-              <div className="flex items-center gap-2 w-full md:w-auto justify-center md:justify-start opacity-60 text-xs font-bold uppercase tracking-wider mb-2 md:mb-0">
-                <LocIcon className="w-3 h-3" strokeWidth={1.5} /> {item.location}
-              </div>
-              <div className="w-full md:w-48 flex justify-center md:justify-end gap-2 mb-2 md:mb-0">
-                <span className="border border-current px-2 py-1 rounded text-[10px] font-bold uppercase group-hover:border-primary-foreground/20">{item.tag}</span>
-              </div>
-              <div className="w-10 flex justify-end">
-                <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
-              </div>
+
+              <h3 className="text-xl font-semibold text-white mb-1">
+                {item.title}
+              </h3>
+              <p className="text-sm text-[#8B95A5] mb-4">
+                {item.company}
+              </p>
+
+              <ul className="space-y-2.5">
+                {item.responsibilities.map((resp, idx) => (
+                  <li
+                    key={idx}
+                    className="text-sm text-[#A0AAB8]/70 flex items-start gap-3"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-white/10 mt-2 flex-shrink-0" />
+                    <span>{resp}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

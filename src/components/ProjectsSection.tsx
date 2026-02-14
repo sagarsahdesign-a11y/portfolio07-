@@ -1,123 +1,152 @@
-import { PenTool, Coffee, Building2, PlayCircle, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+
+const projects = [
+  {
+    title: "ZenTrade Trading Platform",
+    problem: "Complex B2B workflows causing user confusion and low task completion rates",
+    role: "Lead Product Designer",
+    tools: ["Figma", "Developer Handoff", "Usability Testing"],
+    impact: "Simplified navigation flow, improved dashboard clarity",
+    link: "https://www.behance.net/gallery/217897807/ZenTrade-Trading-App-Ui-Design",
+    image: "/1.png",
+  },
+  {
+    title: "MountainBrew Café App",
+    problem: "Disconnected user experience across ordering, payments, and loyalty program",
+    role: "Product Designer & UX Researcher",
+    tools: ["Figma", "Framer", "Journey Mapping"],
+    impact: "Unified mobile experience with seamless loyalty integration",
+    link: "https://www.behance.net/gallery/213575215/Cafe-Mobile-App-Case-Study",
+    image: "/2.png",
+  },
+  {
+    title: "Real Estate Property Platform",
+    problem: "Poor property discovery and search experience limiting user engagement",
+    role: "UI/UX Designer",
+    tools: ["Figma", "Adobe XD", "Responsive Design"],
+    impact: "Redesigned search flow and property cards for better scannability",
+    link: "https://www.behance.net/gallery/207380339/Simple-Real-Estate-Website-UI-Design",
+    image: "/3.png",
+  },
+];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Card 01 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="lg:col-span-5 bg-card p-6 rounded-3xl relative group overflow-hidden hover:-translate-y-2 transition-transform duration-300"
-        >
-          <div className="flex justify-between items-start mb-4">
-            <div className="flex flex-col">
-              <span className="text-foreground/60 font-bold text-xs mb-1">01</span>
-              <span className="text-foreground/60 font-bold text-[10px] tracking-widest uppercase">UI/UX Design</span>
-            </div>
-            <PenTool className="w-5 h-5 text-foreground/40" strokeWidth={1.5} />
-          </div>
-
-          <div className="bg-primary p-3 rounded-2xl mb-6 transform group-hover:scale-[1.02] transition-transform duration-500">
-            <div className="bg-primary/90 rounded-xl aspect-[4/5] relative overflow-hidden flex items-center justify-center">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Dashboard" className="w-full h-full object-cover opacity-90 mix-blend-multiply" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-background rounded-full flex items-center justify-center shadow-lg text-foreground">
-                  <span className="font-bold text-xl tracking-tight">ZT</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-3xl font-bold mb-2 tracking-tight font-display">ZenTrade Platform</h2>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md">Redesigned dashboards and navigation to simplify complex B2B trading workflows and improve usability.</p>
-
-          <button className="bg-accent text-accent-foreground px-5 py-2.5 rounded-full flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors">
-            <PlayCircle className="w-4 h-4 fill-current" strokeWidth={1.5} />
-            View Case
-          </button>
-        </motion.div>
-
-        {/* Right Column */}
-        <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Card 02 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+    <section id="projects" className="relative py-28 md:py-36">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        {/* Section Header */}
+        <div className="mb-20">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-primary p-5 rounded-3xl group relative overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="section-label mb-4 block"
           >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <span className="text-primary-foreground font-bold text-xs block mb-1">02</span>
-                <span className="text-primary-foreground/60 font-bold text-[10px] tracking-widest uppercase">PRODUCT</span>
-              </div>
-              <Coffee className="w-5 h-5 text-primary-foreground/40" strokeWidth={1.5} />
-            </div>
-
-            <div className="bg-primary/80 p-3 rounded-2xl mb-5 transform group-hover:scale-[1.02] transition-transform duration-500">
-              <div className="bg-primary rounded-xl aspect-square flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-24 h-24">
-                  <div className="absolute inset-0 bg-background rounded-full opacity-80 mix-blend-multiply top-0 left-0" />
-                  <div className="absolute inset-0 bg-accent rounded-full opacity-80 mix-blend-multiply top-4 left-4" />
-                </div>
-              </div>
-            </div>
-
-            <h3 className="text-primary-foreground text-2xl font-bold mb-1 tracking-tight font-display">MountainBrew</h3>
-            <p className="text-primary-foreground/50 text-xs font-bold mb-4 uppercase">Café Mobile App</p>
-
-            <div className="flex gap-2">
-              <span className="bg-accent text-accent-foreground px-3 py-1 rounded text-[10px] font-bold">MOBILE</span>
-              <span className="bg-background/20 text-foreground px-3 py-1 rounded text-[10px] font-bold">LOYALTY</span>
-            </div>
-
-            <button className="absolute bottom-5 right-5 w-10 h-10 bg-primary border-2 border-primary-foreground/10 rounded-full flex items-center justify-center text-primary-foreground hover:bg-background hover:text-background transition-colors">
-              <Play className="w-4 h-4 fill-current" strokeWidth={1.5} />
-            </button>
-          </motion.div>
-
-          {/* Card 03 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            Selected Work
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-card p-5 rounded-3xl group relative overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+            transition={{ delay: 0.08, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-white mb-5"
           >
-            <div className="flex justify-between items-start mb-4">
-              <div>
-                <span className="text-foreground/80 font-bold text-xs block mb-1">03</span>
-                <span className="text-foreground/60 font-bold text-[10px] tracking-widest uppercase">IDENTITY</span>
-              </div>
-              <Building2 className="w-5 h-5 text-foreground/40" strokeWidth={1.5} />
-            </div>
+            Case Studies
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-base text-[#8B95A5] leading-relaxed"
+          >
+            Product design work focused on improving user workflows, accessibility, and developer collaboration.
+          </motion.p>
+        </div>
 
-            <div className="bg-primary p-3 rounded-2xl mb-5 transform group-hover:scale-[1.02] transition-transform duration-500">
-              <div className="bg-[hsl(0,0%,10%)] rounded-xl aspect-square flex items-center justify-center overflow-hidden">
-                <div className="grid grid-cols-2 gap-2 w-32 rotate-12">
-                  <div className="h-12 bg-accent rounded-lg" />
-                  <div className="h-12 bg-background rounded-lg" />
-                  <div className="h-12 bg-primary rounded-lg col-span-2" />
+        {/* 3-column grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="group relative glass-card overflow-hidden flex flex-col"
+              whileHover={{ y: -4 }}
+            >
+              {/* Image */}
+              <div className="aspect-[4/3] bg-black/20 overflow-hidden m-3 rounded-2xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-5 pt-2 flex flex-col flex-1">
+                <h3 className="text-lg font-semibold text-white mb-3 leading-tight group-hover:text-blue-400 transition-colors duration-400">
+                  {project.title}
+                </h3>
+
+                {/* Problem */}
+                <div className="mb-3">
+                  <p className="text-[10px] font-semibold text-blue-400/50 uppercase tracking-[0.15em] mb-1">
+                    Problem
+                  </p>
+                  <p className="text-sm text-[#8B95A5] leading-relaxed">
+                    {project.problem}
+                  </p>
                 </div>
+
+                {/* Role */}
+                <div className="mb-3">
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.1em] text-white/30 border border-white/[0.06] px-2.5 py-1 rounded-lg">
+                    {project.role}
+                  </span>
+                </div>
+
+                {/* Tools */}
+                <div className="mb-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tools.map((tool, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] font-medium px-2.5 py-1 bg-white/[0.04] text-white/40 rounded-lg border border-white/[0.04] transition-colors duration-400 hover:bg-white/[0.07] hover:text-white/60"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Impact */}
+                <div className="mb-5 flex-1">
+                  <p className="text-[10px] font-semibold text-white/20 uppercase tracking-[0.15em] mb-1">
+                    Impact
+                  </p>
+                  <p className="text-sm text-[#A0AAB8]">
+                    {project.impact}
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-400/80 hover:text-blue-300 font-medium text-sm group/link transition-colors duration-400"
+                >
+                  View Case Study
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-400" strokeWidth={2} />
+                </a>
               </div>
-            </div>
-
-            <h3 className="text-foreground text-2xl font-bold mb-1 tracking-tight font-display">ATG Hotels</h3>
-            <p className="text-foreground/60 text-xs font-bold mb-4 uppercase">Hospitality Booking</p>
-
-            <div className="flex gap-2">
-              <span className="bg-accent text-accent-foreground px-3 py-1 rounded text-[10px] font-bold">WEB</span>
-              <span className="bg-accent text-accent-foreground px-3 py-1 rounded text-[10px] font-bold">SYSTEM</span>
-            </div>
-
-            <button className="absolute bottom-5 right-5 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors">
-              <Play className="w-4 h-4 fill-current" strokeWidth={1.5} />
-            </button>
-          </motion.div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

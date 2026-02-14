@@ -1,54 +1,74 @@
-import { Linkedin, Twitter, Instagram, Play } from "lucide-react";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/", bg: "bg-[hsl(201,100%,35%)]", text: "text-foreground", border: "border-4 border-primary" },
-  { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1", bg: "bg-[hsl(340,75%,54%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
-  { icon: Twitter, href: "https://x.com/Sagarshahas", bg: "bg-[hsl(0,0%,10%)]", text: "text-foreground", border: "border-2 border-foreground/20" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sagar-shah-389980319/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/sagaruiux.1/?__pwa=1", label: "Instagram" },
+  { icon: Twitter, href: "https://x.com/Sagarshahas", label: "X" },
 ];
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-card pt-12 pb-8 rounded-t-[3rem] mt-12 mx-2 md:mx-6 shadow-inner border-t border-foreground/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
-          <h2 className="text-5xl md:text-6xl font-condensed font-bold max-w-md text-center lg:text-left leading-[0.9] tracking-tight">
-            You can find<br />me here:
-          </h2>
+    <footer id="footer" className="border-t border-white/[0.04] pt-20 pb-10">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
+        {/* Top — CTA + Social */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-md text-center lg:text-left leading-[1.05]"
+          >
+            You can find<br />
+            <span className="text-blue-400/60">me here</span>:
+          </motion.h2>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3">
             {socialLinks.map((s, i) => {
               const Icon = s.icon;
               return (
-                <a
+                <motion.a
                   key={i}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-16 h-16 ${s.bg} rounded-2xl flex items-center justify-center ${s.text} hover:scale-110 transition-transform shadow-lg ${s.border} relative`}
+                  className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-white/30 hover:text-white/60 transition-all duration-400"
+                  whileHover={{ y: -3 }}
                 >
-                  <Icon className="w-8 h-8 fill-current" strokeWidth={1.5} />
-                </a>
+                  <Icon className="w-5 h-5" strokeWidth={1.5} />
+                </motion.a>
               );
             })}
           </div>
         </div>
 
-        <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-bold tracking-widest uppercase text-foreground/60">
-          <div className="flex items-center gap-2">
-            <span className="text-foreground font-black text-lg mr-2">: : SS</span>
-            <div className="flex flex-col leading-none">
-              <span>SAGAR</span>
-              <span>SAH</span>
+        {/* Divider */}
+        <div className="border-t border-white/[0.04] mb-10" />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-semibold tracking-[0.15em] uppercase text-white/20">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <span className="text-white/60 font-extrabold text-lg tracking-tight">
+              SS
+            </span>
+            <div className="h-5 w-px bg-white/[0.06]" />
+            <div className="flex flex-col leading-none gap-0.5">
+              <span className="text-white/30">Sagar</span>
+              <span className="text-white/30">Sah</span>
             </div>
           </div>
 
+          {/* Nav Links */}
           <div className="flex gap-8">
-            <a href="#projects" className="hover:text-foreground transition-colors">Works</a>
-            <a href="#about" className="hover:text-foreground transition-colors">About</a>
-            <a href="#skills" className="hover:text-foreground transition-colors">Awards</a>
-            <a href="mailto:sagar.sah.design@gmail.com" className="hover:text-foreground transition-colors">Contacts</a>
+            <a href="#projects" className="hover:text-white/40 transition-colors duration-400">Works</a>
+            <a href="#about" className="hover:text-white/40 transition-colors duration-400">About</a>
+            <a href="#skills" className="hover:text-white/40 transition-colors duration-400">Skills</a>
+            <a href="mailto:sagar.sah.design@gmail.com" className="hover:text-white/40 transition-colors duration-400">Contact</a>
           </div>
 
+          {/* Copyright */}
           <div className="text-right">
             <p>2024 | COPYRIGHT</p>
             <p>ALL RIGHTS RESERVED</p>
