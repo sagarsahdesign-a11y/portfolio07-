@@ -98,47 +98,13 @@ export function MinimalistHero({
                 className
             )}
         >
-            {/* ─── Layer 0: Deep navy base gradient — fades to transparent at bottom ─── */}
-            <div className="absolute inset-0 pointer-events-none"
-                style={{
-                    background: "linear-gradient(180deg, #0B1120 0%, #0F172A 40%, rgba(30, 41, 59, 0) 100%)",
-                }}
-            />
-
-
-
-            {/* ─── Layer 1: Purple vortex artwork — cinematic depth field ─── */}
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    transform: `translateY(${scrollY * 0.04}px) scale(1.2)`,
-                    transition: "transform 0.1s linear",
-                }}
-            >
-                <img
-                    src={vortexBg}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{
-                        opacity: 0.15,
-                        filter: "blur(32px) contrast(1.1)",
-                        maskImage: "radial-gradient(ellipse 60% 70% at 50% 50%, transparent 15%, black 60%)",
-                        WebkitMaskImage: "radial-gradient(ellipse 60% 70% at 50% 50%, transparent 15%, black 60%)",
-                    }}
-                />
-            </div>
-
-            {/* ─── Layer 2: Dark overlay to tame the vortex ─── */}
-            <div className="absolute inset-0 pointer-events-none bg-[#0B1120]/50" />
-
-            {/* ─── Layer 3: Grain texture above vortex ─── */}
+            {/* ─── Grain texture ─── */}
             <div className="absolute inset-0 pointer-events-none grain" />
 
             {/* ─── Layer 4: Radial hero spotlight — toned-down blue glow ─── */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
                 style={{
-                    background: "radial-gradient(circle, rgba(37,99,235,0.045) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(148,163,184,0.025) 0%, transparent 70%)",
                 }}
             />
 
@@ -243,11 +209,11 @@ export function MinimalistHero({
                     {/* Soft gradient glow circle behind portrait */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[260px] h-[260px] md:w-[330px] md:h-[330px] lg:w-[380px] lg:h-[380px] rounded-full opacity-40"
                         style={{
-                            background: "radial-gradient(circle, rgba(37,99,235,0.35) 0%, rgba(37,99,235,0.08) 50%, transparent 70%)",
+                            background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(148,163,184,0.03) 50%, transparent 70%)",
                         }}
                     />
                     {/* Secondary ambient glow */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-blue-600/[0.04] blur-[80px]" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-white/[0.015] blur-[80px]" />
 
                     {/* Portrait — floating animation */}
                     <motion.img
