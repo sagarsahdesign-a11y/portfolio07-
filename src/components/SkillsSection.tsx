@@ -28,8 +28,8 @@ const skills = {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="relative py-28 md:py-36">
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <section id="skills" className="relative py-20 md:py-36">
+      <div className="max-w-6xl mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="mb-20">
           <motion.span
@@ -53,7 +53,7 @@ const SkillsSection = () => {
         </div>
 
         {/* 3-column structured layout */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-8">
           {Object.entries(skills).map(([category, items], index) => (
             <motion.div
               key={category}

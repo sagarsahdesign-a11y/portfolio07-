@@ -27,7 +27,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className="relative py-28 md:py-36 overflow-hidden">
+        <section id="contact" className="relative py-20 md:py-36 overflow-hidden">
             {/* Ambient lights */}
             <div className="absolute top-1/3 right-[10%] w-[350px] h-[350px] rounded-full pointer-events-none"
                 style={{
@@ -35,8 +35,8 @@ const ContactSection = () => {
                 }}
             />
 
-            <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-20">
+            <div className="max-w-6xl mx-auto px-4 md:px-12 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-20">
                     {/* Left — Form */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ const ContactSection = () => {
                                 Connect on Social
                             </h3>
 
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <a
                                     href="https://linkedin.com/in/sagar-shah-389980319"
                                     target="_blank"

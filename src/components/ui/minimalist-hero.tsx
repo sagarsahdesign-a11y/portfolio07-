@@ -94,7 +94,7 @@ export function MinimalistHero({
         <section
             ref={sectionRef}
             className={cn(
-                "relative min-h-[85vh] overflow-hidden flex flex-col",
+                "relative min-h-[80vh] md:min-h-[85vh] overflow-hidden flex flex-col",
                 className
             )}
         >
@@ -121,7 +121,7 @@ export function MinimalistHero({
                 animate="visible"
                 variants={fadeUp}
                 custom={0}
-                className="flex items-center justify-between px-6 md:px-14 pt-8 pb-4 relative z-30"
+                className="flex items-center justify-between px-4 md:px-14 pt-6 md:pt-8 pb-4 relative z-30"
             >
                 <a
                     href="#"
@@ -152,7 +152,7 @@ export function MinimalistHero({
             </motion.nav>
 
             {/* ─── Main 3-column grid ─── */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-0 items-end px-6 md:px-14 pb-12 md:pb-20 relative z-10">
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-0 items-end px-4 md:px-14 pb-10 md:pb-20 relative z-10">
 
                 {/* ── Left column — intro text ── */}
                 <motion.div
@@ -207,7 +207,7 @@ export function MinimalistHero({
                     className="relative flex items-end justify-center order-1 lg:order-2 mb-8 lg:mb-0"
                 >
                     {/* Soft gradient glow circle behind portrait */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[260px] h-[260px] md:w-[330px] md:h-[330px] lg:w-[380px] lg:h-[380px] rounded-full opacity-40"
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[330px] md:h-[330px] lg:w-[380px] lg:h-[380px] rounded-full opacity-40"
                         style={{
                             background: "radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(148,163,184,0.03) 50%, transparent 70%)",
                         }}
@@ -219,7 +219,7 @@ export function MinimalistHero({
                     <motion.img
                         src={imageSrc}
                         alt={imageAlt}
-                        className="relative z-10 w-[220px] md:w-[300px] lg:w-[360px] object-cover object-top rounded-t-[180px] animate-float-profile"
+                        className="relative z-10 w-[180px] sm:w-[220px] md:w-[300px] lg:w-[360px] object-cover object-top rounded-t-[180px] animate-float-profile"
                         style={{
                             maxHeight: "68vh",
                             filter: "drop-shadow(0 16px 48px rgba(0,0,0,0.4))",
@@ -240,10 +240,10 @@ export function MinimalistHero({
                         custom={2}
                         className="mb-12 text-right"
                     >
-                        <p className="text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-black leading-none tracking-tighter text-white/[0.06] uppercase select-none">
+                        <p className="text-[2.5rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-black leading-none tracking-tighter text-white/[0.06] uppercase select-none">
                             {overlayText.part1}
                         </p>
-                        <p className="text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-black leading-none tracking-tighter text-white/[0.06] uppercase select-none">
+                        <p className="text-[2.5rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-black leading-none tracking-tighter text-white/[0.06] uppercase select-none">
                             {overlayText.part2}
                         </p>
                     </motion.div>

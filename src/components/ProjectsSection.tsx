@@ -33,8 +33,8 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="relative py-28 md:py-36">
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <section id="projects" className="relative py-20 md:py-36">
+      <div className="max-w-6xl mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="mb-20">
           <motion.span
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* 3-column grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {projects.map((project, index) => (
             <motion.article
               key={index}
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5 pt-2 flex flex-col flex-1">
+              <div className="p-4 md:p-5 pt-2 flex flex-col flex-1">
                 <h3 className="text-lg font-semibold text-white mb-3 leading-tight group-hover:text-blue-400 transition-colors duration-400">
                   {project.title}
                 </h3>

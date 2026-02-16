@@ -9,16 +9,16 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer id="footer" className="border-t border-white/[0.04] pt-20 pb-10">
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <footer id="footer" className="border-t border-white/[0.04] pt-16 md:pt-20 pb-10">
+      <div className="max-w-6xl mx-auto px-4 md:px-12">
         {/* Top — CTA + Social */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 mb-16 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-md text-center lg:text-left leading-[1.05]"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-md text-center lg:text-left leading-[1.05]"
           >
             You can find<br />
             <span className="text-blue-400/60">me here</span>:

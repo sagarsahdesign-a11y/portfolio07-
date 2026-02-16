@@ -57,7 +57,7 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-28 md:py-36 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-36 overflow-hidden">
       {/* Soft ambient light */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
@@ -65,8 +65,8 @@ const AboutSection = () => {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+      <div className="max-w-6xl mx-auto px-4 md:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -153,7 +153,7 @@ const AboutSection = () => {
                     <div className="w-0.5 h-5 bg-blue-500/40 rounded-full group-hover:h-7 transition-all duration-400" />
                     {category.title}
                   </h4>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 pl-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pl-5">
                     {category.skills.map((skill) => (
                       <div
                         key={skill}
