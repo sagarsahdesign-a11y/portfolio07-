@@ -135,7 +135,7 @@ export function MinimalistHero({
                         <a
                             key={link.label}
                             href={link.href}
-                            className="text-[11px] font-semibold tracking-[0.15em] uppercase text-white/35 hover:text-white/80 transition-colors duration-400"
+                            className="text-[11px] font-semibold tracking-[0.15em] uppercase text-white/50 hover:text-white/95 transition-colors duration-400"
                         >
                             {link.label}
                         </a>
@@ -144,7 +144,7 @@ export function MinimalistHero({
 
                 <a
                     href={readMoreLink}
-                    className="hidden md:inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-white/40 hover:text-white/80 transition-colors duration-400"
+                    className="hidden md:inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-white/55 hover:text-white/90 transition-colors duration-400"
                 >
                     Portfolio
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -163,7 +163,7 @@ export function MinimalistHero({
                     <motion.p
                         variants={fadeUp}
                         custom={2}
-                        className="text-[15px] md:text-base leading-[1.8] text-[#8B95A5] mb-8"
+                        className="text-[15px] md:text-base leading-[1.8] text-[#B8C5D6] mb-8"
                     >
                         {mainText}
                     </motion.p>
@@ -172,7 +172,7 @@ export function MinimalistHero({
                         variants={fadeUp}
                         custom={3}
                         href={readMoreLink}
-                        className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.15em] uppercase text-white/50 hover:text-white/80 transition-colors duration-400 group w-fit"
+                        className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white/95 transition-colors duration-400 group w-fit"
                     >
                         Read More
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-400" />
@@ -188,7 +188,7 @@ export function MinimalistHero({
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-full border border-white/[0.07] flex items-center justify-center text-white/25 hover:text-white/60 hover:border-white/15 transition-all duration-400"
+                                    className="w-10 h-10 rounded-full border border-white/[0.07] flex items-center justify-center text-white/35 hover:text-white/75 hover:border-white/20 transition-all duration-400"
                                     whileHover={{ scale: 1.05 }}
                                 >
                                     <Icon className="w-4 h-4" strokeWidth={1.5} />
@@ -251,7 +251,7 @@ export function MinimalistHero({
                     <motion.p
                         variants={fadeUp}
                         custom={4}
-                        className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/20"
+                        className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/35"
                     >
                         {locationText}
                     </motion.p>

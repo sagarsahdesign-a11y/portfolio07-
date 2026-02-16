@@ -63,7 +63,7 @@ const SkillsSection = () => {
               transition={{ delay: index * 0.08, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="glass-card p-6"
             >
-              <h3 className="text-sm font-semibold text-white/60 mb-6 pb-3 border-b border-white/[0.06] flex items-center gap-2.5">
+              <h3 className="text-sm font-semibold text-white/75 mb-6 pb-3 border-b border-white/[0.06] flex items-center gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
                 {category}
               </h3>
@@ -75,7 +75,7 @@ const SkillsSection = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.06 + idx * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="text-sm text-[#8B95A5] flex items-center gap-3 hover:text-[#A0AAB8] transition-colors duration-400"
+                    className="text-sm text-[#B8C5D6] flex items-center gap-3 hover:text-[#D5E3F2] transition-colors duration-400"
                   >
                     <span className="w-1 h-1 rounded-full bg-white/[0.08] flex-shrink-0" />
                     {skill}

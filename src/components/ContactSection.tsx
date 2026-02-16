@@ -50,7 +50,7 @@ const ContactSection = () => {
                             Let's Connect
                         </h2>
 
-                        <p className="text-base text-[#8B95A5] mb-10 leading-[1.8]">
+                        <p className="text-base text-[#B8C5D6] mb-10 leading-[1.8]">
                             Have a project in mind or want to discuss design opportunities? I'd love to hear from you.
                         </p>
 
@@ -71,7 +71,7 @@ const ContactSection = () => {
                         {/* Form */}
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium mb-2 text-white/40">
+                                <label htmlFor="name" className="block text-sm font-medium mb-2 text-white/55">
                                     Name
                                 </label>
                                 <input
@@ -87,7 +87,7 @@ const ContactSection = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium mb-2 text-white/40">
+                                <label htmlFor="email" className="block text-sm font-medium mb-2 text-white/55">
                                     Email
                                 </label>
                                 <input
@@ -103,7 +103,7 @@ const ContactSection = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium mb-2 text-white/40">
+                                <label htmlFor="message" className="block text-sm font-medium mb-2 text-white/55">
                                     Message
                                 </label>
                                 <textarea
@@ -153,11 +153,11 @@ const ContactSection = () => {
                                     className="flex items-center gap-4 p-4 glass-card group"
                                 >
                                     <div className="w-11 h-11 bg-white/[0.04] rounded-xl flex items-center justify-center border border-white/[0.06] group-hover:bg-blue-600/50 transition-colors duration-400">
-                                        <Mail className="w-5 h-5 text-white/30 group-hover:text-white/80 transition-colors duration-400" strokeWidth={1.8} />
+                                        <Mail className="w-5 h-5 text-white/40 group-hover:text-white/90 transition-colors duration-400" strokeWidth={1.8} />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] font-semibold text-white/20 uppercase tracking-[0.12em]">Email</p>
-                                        <p className="text-sm font-medium text-white/60">sagar.sah.design@gmail.com</p>
+                                        <p className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.12em]">Email</p>
+                                        <p className="text-sm font-medium text-white/75">sagar.sah.design@gmail.com</p>
                                     </div>
                                 </a>
 
@@ -168,11 +168,11 @@ const ContactSection = () => {
                                     className="flex items-center gap-4 p-4 glass-card group"
                                 >
                                     <div className="w-11 h-11 bg-white/[0.04] rounded-xl flex items-center justify-center border border-white/[0.06] group-hover:bg-blue-600/50 transition-colors duration-400">
-                                        <Calendar className="w-5 h-5 text-white/30 group-hover:text-white/80 transition-colors duration-400" strokeWidth={1.8} />
+                                        <Calendar className="w-5 h-5 text-white/40 group-hover:text-white/90 transition-colors duration-400" strokeWidth={1.8} />
                                     </div>
                                     <div className="flex-1">
-                                        <p className="text-[10px] font-semibold text-white/20 uppercase tracking-[0.12em]">Schedule</p>
-                                        <p className="text-sm font-medium text-white/60">Book a Call</p>
+                                        <p className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.12em]">Schedule</p>
+                                        <p className="text-sm font-medium text-white/75">Book a Call</p>
                                     </div>
                                     <ExternalLink className="w-4 h-4 text-white/10 group-hover:text-white/30 transition-colors duration-400" />
                                 </a>
@@ -193,7 +193,7 @@ const ContactSection = () => {
                                     className="flex items-center gap-3 p-4 glass-card"
                                 >
                                     <Linkedin className="w-4 h-4 text-white/30" strokeWidth={1.8} />
-                                    <span className="text-sm font-medium text-white/50">LinkedIn</span>
+                                    <span className="text-sm font-medium text-white/65">LinkedIn</span>
                                 </a>
 
                                 <a
@@ -203,7 +203,7 @@ const ContactSection = () => {
                                     className="flex items-center gap-3 p-4 glass-card"
                                 >
                                     <Instagram className="w-4 h-4 text-white/30" strokeWidth={1.8} />
-                                    <span className="text-sm font-medium text-white/50">Instagram</span>
+                                    <span className="text-sm font-medium text-white/65">Instagram</span>
                                 </a>
 
                                 <a
@@ -215,7 +215,7 @@ const ContactSection = () => {
                                     <svg className="w-4 h-4 text-white/30" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                     </svg>
-                                    <span className="text-sm font-medium text-white/50">X</span>
+                                    <span className="text-sm font-medium text-white/65">X</span>
                                 </a>
 
                                 <a
@@ -227,7 +227,7 @@ const ContactSection = () => {
                                     <svg className="w-4 h-4 text-white/30" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.67.767-.61.165-1.252.25-1.91.25H0V4.5h6.938v.003zM3.495 8.96h2.78c.68 0 1.196-.13 1.54-.39.345-.258.518-.715.518-1.36 0-.49-.14-.84-.42-1.07-.28-.23-.695-.345-1.237-.345H3.495V8.96zm0 5.48h3.016c.613 0 1.103-.13 1.46-.39.36-.26.54-.76.54-1.49 0-.75-.18-1.24-.533-1.49-.353-.25-.87-.38-1.552-.38H3.495v3.75zM23.707 9.24c.15.34.26.72.34 1.15.08.43.12.91.12 1.43v.42H15.93c0 .85.25 1.5.75 1.95.5.45 1.05.67 1.67.67.58 0 1.09-.16 1.54-.48.46-.32.77-.64.94-.96h3.85c-.29 1.08-.9 2.02-1.81 2.8-.91.78-2.12 1.17-3.63 1.17-1.02 0-1.92-.15-2.69-.44-.77-.29-1.41-.7-1.92-1.23-.51-.52-.89-1.15-1.14-1.87-.25-.73-.38-1.54-.38-2.44 0-.91.13-1.74.39-2.47.26-.73.63-1.35 1.14-1.87.5-.52 1.13-.92 1.88-1.21.75-.29 1.62-.43 2.6-.43.96 0 1.81.17 2.56.52.74.35 1.36.83 1.84 1.44.48.61.84 1.32 1.07 2.13zm-3.7 2.26c-.04-.67-.27-1.18-.7-1.53-.42-.35-.93-.52-1.52-.52-.3 0-.58.04-.82.13-.24.09-.45.22-.63.39-.18.17-.33.37-.43.6-.1.23-.17.48-.19.75h4.29z" />
                                     </svg>
-                                    <span className="text-sm font-medium text-white/50">Behance</span>
+                                    <span className="text-sm font-medium text-white/65">Behance</span>
                                 </a>
                             </div>
                         </div>

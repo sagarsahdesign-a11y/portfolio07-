@@ -60,7 +60,7 @@ const ProjectsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-base text-[#8B95A5] leading-relaxed"
+            className="text-base text-[#B8C5D6] leading-relaxed"
           >
             Product design work focused on improving user workflows, accessibility, and developer collaboration.
           </motion.p>
@@ -98,14 +98,14 @@ const ProjectsSection = () => {
                   <p className="text-[10px] font-semibold text-blue-400/50 uppercase tracking-[0.15em] mb-1">
                     Problem
                   </p>
-                  <p className="text-sm text-[#8B95A5] leading-relaxed">
+                  <p className="text-sm text-[#B8C5D6] leading-relaxed">
                     {project.problem}
                   </p>
                 </div>
 
                 {/* Role */}
                 <div className="mb-3">
-                  <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.1em] text-white/30 border border-white/[0.06] px-2.5 py-1 rounded-lg">
+                  <span className="inline-block text-[10px] font-semibold uppercase tracking-[0.1em] text-white/45 border border-white/[0.08] px-2.5 py-1 rounded-lg">
                     {project.role}
                   </span>
                 </div>
@@ -116,7 +116,7 @@ const ProjectsSection = () => {
                     {project.tools.map((tool, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] font-medium px-2.5 py-1 bg-white/[0.04] text-white/40 rounded-lg border border-white/[0.04] transition-colors duration-400 hover:bg-white/[0.07] hover:text-white/60"
+                        className="text-[10px] font-medium px-2.5 py-1 bg-white/[0.04] text-white/55 rounded-lg border border-white/[0.06] transition-colors duration-400 hover:bg-white/[0.09] hover:text-white/75"
                       >
                         {tool}
                       </span>
@@ -126,10 +126,10 @@ const ProjectsSection = () => {
 
                 {/* Impact */}
                 <div className="mb-5 flex-1">
-                  <p className="text-[10px] font-semibold text-white/20 uppercase tracking-[0.15em] mb-1">
+                  <p className="text-[10px] font-semibold text-white/35 uppercase tracking-[0.15em] mb-1">
                     Impact
                   </p>
-                  <p className="text-sm text-[#A0AAB8]">
+                  <p className="text-sm text-[#C5D3E2]">
                     {project.impact}
                   </p>
                 </div>

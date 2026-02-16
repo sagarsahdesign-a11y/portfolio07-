@@ -82,7 +82,7 @@ const AboutSection = () => {
             </h2>
 
             {/* About paragraph */}
-            <p className="text-base text-[#8B95A5] leading-[1.8] mb-10">
+            <p className="text-base text-[#B8C5D6] leading-[1.8] mb-10">
               Product designer combining UI/UX expertise with a technical background in Cyber Security. I design accessible web and mobile interfaces while collaborating with developers to deliver production-ready products.
             </p>
 
@@ -98,25 +98,25 @@ const AboutSection = () => {
                   className="flex items-start gap-3"
                 >
                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500/50 flex-shrink-0" />
-                  <p className="text-sm text-[#A0AAB8] leading-relaxed">{highlight}</p>
+                  <p className="text-sm text-[#C5D3E2] leading-relaxed">{highlight}</p>
                 </motion.div>
               ))}
             </div>
 
             {/* Contact Info */}
-            <div className="pt-8 border-t border-white/[0.05] space-y-3 text-sm text-[#8B95A5]">
+            <div className="pt-8 border-t border-white/[0.05] space-y-3 text-sm text-[#B8C5D6]">
               <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/60">Location:</span>
+                <span className="font-semibold text-white/70">Location:</span>
                 Bengaluru, India
               </p>
               <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/60">Email:</span>
+                <span className="font-semibold text-white/70">Email:</span>
                 <a href="mailto:sagar.sah.design@gmail.com" className="text-blue-400/70 hover:text-blue-300 transition-colors duration-400">
                   sagar.sah.design@gmail.com
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/60">Phone:</span>
+                <span className="font-semibold text-white/70">Phone:</span>
                 +91 74162 92404
               </p>
             </div>
@@ -149,7 +149,7 @@ const AboutSection = () => {
                   transition={{ duration: 0.5, delay: categoryIndex * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
                   className="group glass-card p-5"
                 >
-                  <h4 className="text-sm font-semibold text-white/70 mb-3 flex items-center gap-3">
+                  <h4 className="text-sm font-semibold text-white/80 mb-3 flex items-center gap-3">
                     <div className="w-0.5 h-5 bg-blue-500/40 rounded-full group-hover:h-7 transition-all duration-400" />
                     {category.title}
                   </h4>
@@ -157,7 +157,7 @@ const AboutSection = () => {
                     {category.skills.map((skill) => (
                       <div
                         key={skill}
-                        className="text-[13px] text-[#8B95A5] flex items-center gap-2.5 py-0.5 hover:text-[#A0AAB8] transition-colors duration-400"
+                        className="text-[13px] text-[#B8C5D6] flex items-center gap-2.5 py-0.5 hover:text-[#D5E3F2] transition-colors duration-400"
                       >
                         <div className="w-1 h-1 rounded-full bg-white/10 flex-shrink-0" />
                         {skill}
