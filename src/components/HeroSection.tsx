@@ -23,7 +23,7 @@ const HeroSection = () => {
       navLinks={navLinks}
       mainText="Product Designer building secure, developer-ready SaaS interfaces. I combine UI/UX thinking, frontend fundamentals, and cybersecurity principles to ship real-world digital products."
       readMoreLink="#projects"
-      imageSrc="/Sagar.png"
+      imageSrc={`${import.meta.env.BASE_URL}Sagar.png`}
       imageAlt="Portrait of Sagar Sah"
       overlayText={{
         part1: "design",

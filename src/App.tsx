@@ -14,22 +14,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <div className="relative min-h-screen overflow-hidden bg-[#0B1120]">
-
-        {/* GLOBAL BACKGROUND - Portal Liquid Effect */}
-        <div
-          className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
-          style={{
-            backgroundImage: `url(${portalImg})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-            opacity: 0.3, // Adjusted for visibility without overpowering
-            filter: "blur(40px) contrast(1.2)", // Glass/liquid effect
-          }}
-        />
-
-        {/* MAIN CONTENT */}
+      <div className="relative min-h-screen bg-[#080B14]">
         <div className="relative z-10">
           <Toaster />
           <Sonner />
@@ -41,7 +26,6 @@ const App = () => (
             </Routes>
           </BrowserRouter>
         </div>
-
       </div>
     </TooltipProvider>
   </QueryClientProvider>

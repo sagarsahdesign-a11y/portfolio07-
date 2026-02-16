@@ -14,13 +14,8 @@ const Index = () => {
       {/* Fixed spatial environment background */}
       <div className="spatial-environment" />
 
-      {/* Floating glass container — the entire portfolio */}
-      <div
-        className="relative z-10 max-w-[1320px] mx-auto my-6 md:my-10 spatial-glass grain overflow-hidden"
-        style={{
-          perspective: "1200px",
-        }}
-      >
+      {/* Floating premium SaaS container */}
+      <div className="relative z-10 max-w-[1400px] mx-auto my-8 rounded-3xl spatial-glass overflow-hidden shadow-2xl">
         <HeroSection />
         <ProjectsSection />
         <AboutSection />

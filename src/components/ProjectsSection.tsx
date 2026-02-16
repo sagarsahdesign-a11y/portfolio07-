@@ -9,7 +9,7 @@ const projects = [
     tools: ["Figma", "Developer Handoff", "Usability Testing"],
     impact: "Simplified navigation flow, improved dashboard clarity",
     link: "https://www.behance.net/gallery/217897807/ZenTrade-Trading-App-Ui-Design",
-    image: "/1.png",
+    image: `${import.meta.env.BASE_URL}1.png`,
   },
   {
     title: "MountainBrew Café App",
@@ -18,7 +18,7 @@ const projects = [
     tools: ["Figma", "Framer", "Journey Mapping"],
     impact: "Unified mobile experience with seamless loyalty integration",
     link: "https://www.behance.net/gallery/213575215/Cafe-Mobile-App-Case-Study",
-    image: "/2.png",
+    image: `${import.meta.env.BASE_URL}2.png`,
   },
   {
     title: "Real Estate Property Platform",
@@ -27,7 +27,7 @@ const projects = [
     tools: ["Figma", "Adobe XD", "Responsive Design"],
     impact: "Redesigned search flow and property cards for better scannability",
     link: "https://www.behance.net/gallery/207380339/Simple-Real-Estate-Website-UI-Design",
-    image: "/3.png",
+    image: `${import.meta.env.BASE_URL}3.png`,
   },
 ];
 

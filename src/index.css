@@ -16,9 +16,9 @@
     --popover: 220 20% 7%;
     --popover-foreground: 220 13% 91%;
 
-    --primary: 217 91% 53%;
-    /* #2563EB */
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    /* White accent */
+    --primary-foreground: 0 0% 0%;
 
     --secondary: 215 20% 65%;
     --secondary-foreground: 0 0% 100%;
@@ -26,15 +26,15 @@
     --muted: 220 14% 11%;
     --muted-foreground: 215 16% 57%;
 
-    --accent: 217 91% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 14% 11%;
     --input: 220 14% 11%;
-    --ring: 217 91% 53%;
+    --ring: 0 0% 100%;
 
     --radius: 1rem;
 
@@ -70,13 +70,14 @@
   }
 
   body {
-    background: var(--spatial-bg);
+    position: relative;
     color: hsl(var(--foreground));
     font-family: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1,
@@ -143,33 +144,40 @@
 
 /* ===== Spatial Glass Container ===== */
 .spatial-glass {
-  background: var(--spatial-surface);
-  backdrop-filter: blur(var(--spatial-blur));
-  -webkit-backdrop-filter: blur(var(--spatial-blur));
-  border: 1px solid var(--spatial-border);
-  border-radius: var(--spatial-radius);
-  box-shadow: var(--spatial-shadow);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .spatial-glass:hover {
-  border-color: var(--spatial-border-hover);
-  box-shadow: var(--spatial-shadow-hover);
+  background: rgba(15, 23, 42, 0.4);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* ===== Inner Glass Card ===== */
 .glass-card {
-  background: var(--spatial-surface);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--spatial-border);
-  border-radius: var(--spatial-radius-inner);
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .glass-card:hover {
-  background: var(--spatial-surface-hover);
-  border-color: var(--spatial-border-hover);
+  background: rgba(15, 23, 42, 0.35);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ===== Glass Input ===== */
@@ -258,6 +266,26 @@
   }
 }
 
+@keyframes blob-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(5%, 5%) rotate(3deg);
+  }
+
+  50% {
+    transform: translate(-3%, 8%) rotate(-2deg);
+  }
+
+  75% {
+    transform: translate(8%, -5%) rotate(4deg);
+  }
+}
+
 /* ===== Animation Utilities ===== */
 .animate-float-slow {
   animation: float-slow 8s ease-in-out infinite;
@@ -278,17 +306,5 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(15, 23, 42, 0.8) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(30, 41, 59, 0.4) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(15, 23, 42, 0.3) 0%, transparent 50%),
-    var(--spatial-bg);
-  filter: blur(0px);
-}
-
-.spatial-environment::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: #080B14;
 }
