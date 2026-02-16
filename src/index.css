@@ -306,9 +306,31 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url('/portfolio07-/background.jpg');
+  background: linear-gradient(135deg,
+      #1a0a2e 0%,
+      #16213e 15%,
+      #0f3460 30%,
+      #533483 50%,
+      #e94560 70%,
+      #0f3460 85%,
+      #16213e 100%);
+  background-image: url('/portfolio07-/background.jpg') !important;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   filter: blur(40px);
   transform: scale(1.1);
+  will-change: transform;
+}
+
+/* Mobile optimization for background */
+@media (max-width: 768px) {
+  .spatial-environment {
+    filter: blur(30px);
+    transform: scale(1.05);
+    background-attachment: scroll;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
