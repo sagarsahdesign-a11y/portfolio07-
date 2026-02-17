@@ -66,10 +66,13 @@ const ResumePage = () => {
                                     <Linkedin size={14} />
                                     LinkedIn
                                 </a>
-                                <button className="btn-pill btn-pill-primary text-sm inline-flex items-center gap-2">
+                                <a
+                                    href="#/"
+                                    className="text-sm text-muted hover:text-dark transition-colors inline-flex items-center gap-1"
+                                >
                                     <Download size={14} />
                                     Download PDF
-                                </button>
+                                </a>
                             </div>
                         </motion.div>
                     </div>

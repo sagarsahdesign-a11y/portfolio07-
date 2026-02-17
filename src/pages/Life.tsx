@@ -160,7 +160,7 @@ const Life = () => {
             {/* Back CTA */}
             <section className="bk-section bg-white">
                 <div className="bk-container text-center">
-                    <a href="/" className="bk-btn bk-btn-pill bk-btn-pill-dark">
+                    <a href="#/" className="bk-btn bk-btn-pill bk-btn-pill-dark">
                         Back to Home
                     </a>
                 </div>

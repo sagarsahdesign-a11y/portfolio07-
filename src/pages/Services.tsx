@@ -112,7 +112,7 @@ const Services = () => {
                             Send Email
                         </a>
                         <a
-                            href="/"
+                            href="#/"
                             className="bk-btn bk-btn-pill"
                         >
                             Back to Home

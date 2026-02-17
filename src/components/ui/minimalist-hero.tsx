@@ -26,7 +26,7 @@ export function BikironHero({
                 <div className="bk-nav-inner">
                     {/* Left: Social Icons */}
                     <div className="bk-nav-links">
-                        <a href="/" className="bk-btn-icon">
+                        <a href="#/" className="bk-btn-icon">
                             <Home size={18} />
                         </a>
                         <a
@@ -47,18 +47,18 @@ export function BikironHero({
                         </a>
                     </div>
 
-                    {/* Right: Pills and Links */}
+                    {/* Right: Pills and Links - ALL HASH-BASED */}
                     <div className="bk-nav-links">
-                        <a href="/resume" className="bk-btn bk-btn-pill bk-btn-pill-dark hidden sm:inline-flex">
+                        <a href="#/resume" className="bk-btn bk-btn-pill bk-btn-pill-dark hidden sm:inline-flex">
                             View Resumé
                         </a>
-                        <a href="/philosophy" className="bk-nav-link hidden md:inline-block">
+                        <a href="#/philosophy" className="bk-nav-link hidden md:inline-block">
                             Design Philosophy
                         </a>
-                        <a href="/life" className="bk-nav-link hidden md:inline-block">
+                        <a href="#/life" className="bk-nav-link hidden md:inline-block">
                             Life & Stories
                         </a>
-                        <a href="/services" className="bk-btn bk-btn-pill bk-btn-pill-orange">
+                        <a href="#/services" className="bk-btn bk-btn-pill bk-btn-pill-orange">
                             Services I offer
                         </a>
                     </div>

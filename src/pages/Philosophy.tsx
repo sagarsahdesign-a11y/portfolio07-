@@ -119,7 +119,7 @@ const Philosophy = () => {
             <section className="bk-section bg-white">
                 <div className="bk-container text-center">
                     <p className="text-muted mb-6">More articles coming soon...</p>
-                    <a href="/" className="bk-btn bk-btn-pill bk-btn-pill-dark">
+                    <a href="#/" className="bk-btn bk-btn-pill bk-btn-pill-dark">
                         Back to Home
                     </a>
                 </div>
