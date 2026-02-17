@@ -8,67 +8,70 @@ const skills = {
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="section bg-white">
-      <div className="container">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
+    <section id="skills" className="bk-section bg-page">
+      <div className="bk-container">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h2 className="text-dark mb-2">Skills & Tools</h2>
+        </motion.div>
+
+        {/* 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Design Skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ delay: 0.1 }}
           >
-            <p className="label mb-6">CAPABILITIES</p>
-            <h2>Skills & Tools</h2>
+            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
+              Skills
+            </h4>
+            <ul className="space-y-2">
+              {skills.design.map((skill, i) => (
+                <li key={i} className="text-sm text-muted">• {skill}</li>
+              ))}
+            </ul>
           </motion.div>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Design Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <h4 className="font-semibold text-base mb-4 text-[#1A1A1A]">Design</h4>
-              <ul className="space-y-2">
-                {skills.design.map((skill, i) => (
-                  <li key={i} className="text-sm text-[#6B7280]">• {skill}</li>
-                ))}
-              </ul>
-            </motion.div>
+          {/* Tools */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
+              Design tools
+            </h4>
+            <ul className="space-y-2">
+              {skills.tools.map((tool, i) => (
+                <li key={i} className="text-sm text-muted">• {tool}</li>
+              ))}
+            </ul>
+          </motion.div>
 
-            {/* Tools */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <h4 className="font-semibold text-base mb-4 text-[#1A1A1A]">Tools</h4>
-              <ul className="space-y-2">
-                {skills.tools.map((tool, i) => (
-                  <li key={i} className="text-sm text-[#6B7280]">• {tool}</li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Development */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <h4 className="font-semibold text-base mb-4 text-[#1A1A1A]">Development</h4>
-              <ul className="space-y-2">
-                {skills.development.map((skill, i) => (
-                  <li key={i} className="text-sm text-[#6B7280]">• {skill}</li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+          {/* Development */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
+              Software
+            </h4>
+            <ul className="space-y-2">
+              {skills.development.map((skill, i) => (
+                <li key={i} className="text-sm text-muted">• {skill}</li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>

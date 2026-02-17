@@ -1,53 +1,54 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, Phone, Briefcase } from "lucide-react";
+import { MapPin, Mail, Briefcase } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section">
-      <div className="container">
-        <div className="max-w-4xl mx-auto">
+    <section id="about" className="bk-section bg-white">
+      <div className="bk-container">
+        <div className="max-w-2xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-10"
           >
-            <p className="label mb-6">ABOUT ME</p>
-            <h2 className="mb-8">Designer with a systems mindset</h2>
-          </motion.div>
-
-          {/* Main Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="card-soft mb-12"
-          >
-            <p className="text-lg leading-relaxed mb-6">
-              I'm a Product Designer with over 2 years of experience building secure, developer-ready SaaS interfaces.
-              I combine UI/UX thinking, frontend fundamentals, and cybersecurity principles to ship real-world digital products.
-            </p>
-            <p className="text-base leading-relaxed">
-              My approach focuses on creating designs that are not just beautiful, but also functional, accessible,
-              and aligned with business goals. I believe great design happens at the intersection of user needs,
-              technical constraints, and business objectives.
+            <h2 className="text-dark mb-6" style={{ fontStyle: 'italic', fontSize: 'clamp(32px, 5vw, 44px)' }}>
+              Designer with a systems mindset
+            </h2>
+            <p className="text-muted" style={{ fontSize: '15px', lineHeight: '1.7' }}>
+              Product designer combining UI/UX expertise with a technical background in Cyber Security.
+              Experienced in designing accessible web and mobile interfaces and collaborating with developers
+              to deliver build-ready products.
             </p>
           </motion.div>
 
-          {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 gap-4 mt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
+                <Briefcase size={20} className="text-dark" />
+              </div>
+              <p className="text-xs text-muted font-medium">2+ Years</p>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="card-soft text-center"
+              className="text-center"
             >
-              <MapPin className="w-6 h-6 mx-auto mb-3 text-[#FF6B35]" />
-              <p className="text-sm font-semibold mb-1">Location</p>
-              <p className="text-sm text-[#6B7280]">Bengaluru, India</p>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
+                <MapPin size={20} className="text-dark" />
+              </div>
+              <p className="text-xs text-muted font-medium">Bengaluru, IN</p>
             </motion.div>
 
             <motion.div
@@ -55,23 +56,12 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="card-soft text-center"
+              className="text-center"
             >
-              <Mail className="w-6 h-6 mx-auto mb-3 text-[#0066FF]" />
-              <p className="text-sm font-semibold mb-1">Email</p>
-              <p className="text-sm text-[#6B7280]">sagar.sah.design@gmail.com</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="card-soft text-center"
-            >
-              <Briefcase className="w-6 h-6 mx-auto mb-3 text-[#FF6B35]" />
-              <p className="text-sm font-semibold mb-1">Status</p>
-              <p className="text-sm text-[#6B7280]">Available for projects</p>
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
+                <Mail size={20} className="text-dark" />
+              </div>
+              <p className="text-xs text-muted font-medium">Available</p>
             </motion.div>
           </div>
         </div>
