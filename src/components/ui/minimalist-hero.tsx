@@ -52,13 +52,13 @@ export function BikironHero({
                         <a href="/resume" className="bk-btn bk-btn-pill bk-btn-pill-dark hidden sm:inline-flex">
                             View Resumé
                         </a>
-                        <a href="#philosophy" className="bk-nav-link hidden md:inline-block">
+                        <a href="/philosophy" className="bk-nav-link hidden md:inline-block">
                             Design Philosophy
                         </a>
-                        <a href="#stories" className="bk-nav-link hidden md:inline-block">
+                        <a href="/life" className="bk-nav-link hidden md:inline-block">
                             Life & Stories
                         </a>
-                        <a href="#services" className="bk-btn bk-btn-pill bk-btn-pill-orange">
+                        <a href="/services" className="bk-btn bk-btn-pill bk-btn-pill-orange">
                             Services I offer
                         </a>
                     </div>
@@ -81,7 +81,7 @@ export function BikironHero({
                                 {name.toUpperCase()},
                             </motion.p>
 
-                            {/* Profile Image */}
+                            {/* Profile Image - Updated to 88px */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -92,17 +92,26 @@ export function BikironHero({
                                     src={profileImage}
                                     alt={name}
                                     className="bk-profile"
+                                    style={{
+                                        width: '88px',
+                                        height: '88px',
+                                        borderRadius: '50%',
+                                        objectFit: 'cover',
+                                        border: '3px solid white',
+                                        boxShadow: '0 6px 28px rgba(0,0,0,0.14)'
+                                    }}
                                 />
                             </motion.div>
 
-                            {/* Large Heading - 2 Lines */}
+                            {/* Large Heading - 2 Lines - Updated size */}
                             <motion.h1
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                                 className="mb-6"
                                 style={{
-                                    lineHeight: '0.95',
+                                    fontSize: 'clamp(48px, 7vw, 80px)',
+                                    lineHeight: '1.0',
                                     maxWidth: '600px',
                                     margin: '0 auto 24px'
                                 }}
@@ -117,7 +126,7 @@ export function BikironHero({
                                 transition={{ duration: 0.6, delay: 0.3 }}
                                 className="text-muted mb-10"
                                 style={{
-                                    maxWidth: '500px',
+                                    maxWidth: '420px',
                                     margin: '0 auto 40px',
                                     fontSize: '15px',
                                     lineHeight: '1.7'
@@ -126,13 +135,17 @@ export function BikironHero({
                                 {description}
                             </motion.p>
 
-                            {/* Orange Circle Arrow CTA */}
+                            {/* Orange Circle Arrow CTA - Updated to 56px */}
                             <motion.a
                                 href="#work"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.6, delay: 0.4 }}
                                 className="bk-btn-circle inline-flex"
+                                style={{
+                                    width: '56px',
+                                    height: '56px'
+                                }}
                             >
                                 <ArrowDown size={24} strokeWidth={2} />
                             </motion.a>
