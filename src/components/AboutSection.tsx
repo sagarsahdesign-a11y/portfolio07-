@@ -1,172 +1,78 @@
 import { motion } from "framer-motion";
-
-const skillCategories = [
-  {
-    title: "Core UX/UI",
-    skills: [
-      "User Research",
-      "Information Architecture",
-      "Wireframing & Prototyping",
-      "Interaction Design",
-      "Usability Testing",
-      "Design Systems",
-      "Accessibility (WCAG)",
-      "Responsive Design",
-    ],
-  },
-  {
-    title: "Design Strategy",
-    skills: [
-      "User-Centered Design",
-      "Journey Mapping",
-      "Persona Development",
-      "Security UX Patterns",
-      "Product Thinking",
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      "Figma",
-      "Framer",
-      "Adobe XD",
-      "Photoshop",
-      "Illustrator",
-      "Miro",
-      "Notion",
-    ],
-  },
-  {
-    title: "Development & Technical",
-    skills: [
-      "HTML5 & CSS3",
-      "JavaScript",
-      "Developer Handoff",
-      "Design Tokens",
-      "Secure Authentication UX",
-      "Git Collaboration",
-    ],
-  },
-];
-
-const highlights = [
-  "Combining design expertise with cyber security knowledge for secure, user-friendly interfaces",
-  "Experienced in building accessible, developer-ready design systems",
-  "Active community contributor with 9k+ followers sharing practical UX insights",
-];
+import { MapPin, Mail, Phone, Briefcase } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-20 md:py-36 overflow-hidden">
-      {/* Soft ambient light */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(148,163,184,0.03) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-4 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
-          {/* Left Column */}
+    <section id="about" className="section">
+      <div className="container">
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center mb-16"
           >
-            <span className="section-label mb-4 block">About Me</span>
-
-            <h2 className="text-white mb-6">
-              Design Meets<br />
-              <span className="text-blue-400/80">Security</span>
-            </h2>
-
-            {/* About paragraph */}
-            <p className="text-base text-[#B8C5D6] leading-[1.8] mb-10">
-              Product designer combining UI/UX expertise with a technical background in Cyber Security. I design accessible web and mobile interfaces while collaborating with developers to deliver production-ready products.
-            </p>
-
-            {/* Highlights */}
-            <div className="space-y-4 mb-10">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="flex items-start gap-3"
-                >
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500/50 flex-shrink-0" />
-                  <p className="text-sm text-[#C5D3E2] leading-relaxed">{highlight}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Contact Info */}
-            <div className="pt-8 border-t border-white/[0.05] space-y-3 text-sm text-[#B8C5D6]">
-              <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/70">Location:</span>
-                Bengaluru, India
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/70">Email:</span>
-                <a href="mailto:sagar.sah.design@gmail.com" className="text-blue-400/70 hover:text-blue-300 transition-colors duration-400">
-                  sagar.sah.design@gmail.com
-                </a>
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="font-semibold text-white/70">Phone:</span>
-                +91 74162 92404
-              </p>
-            </div>
+            <p className="label mb-6">ABOUT ME</p>
+            <h2 className="mb-8">Designer with a systems mindset</h2>
           </motion.div>
 
-          {/* Right Column — Skills Grid */}
-          <div>
+          {/* Main Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="card-soft mb-12"
+          >
+            <p className="text-lg leading-relaxed mb-6">
+              I'm a Product Designer with over 2 years of experience building secure, developer-ready SaaS interfaces.
+              I combine UI/UX thinking, frontend fundamentals, and cybersecurity principles to ship real-world digital products.
+            </p>
+            <p className="text-base leading-relaxed">
+              My approach focuses on creating designs that are not just beautiful, but also functional, accessible,
+              and aligned with business goals. I believe great design happens at the intersection of user needs,
+              technical constraints, and business objectives.
+            </p>
+          </motion.div>
+
+          {/* Contact Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="mb-8"
+              transition={{ delay: 0.3 }}
+              className="card-soft text-center"
             >
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Skills & Expertise
-              </h3>
-              <p className="text-sm text-[#8B95A5]">
-                A comprehensive toolkit for building exceptional digital products
-              </p>
+              <MapPin className="w-6 h-6 mx-auto mb-3 text-[#FF6B35]" />
+              <p className="text-sm font-semibold mb-1">Location</p>
+              <p className="text-sm text-[#6B7280]">Bengaluru, India</p>
             </motion.div>
 
-            <div className="grid gap-5">
-              {skillCategories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: categoryIndex * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="group glass-card p-5"
-                >
-                  <h4 className="text-sm font-semibold text-white/80 mb-3 flex items-center gap-3">
-                    <div className="w-0.5 h-5 bg-blue-500/40 rounded-full group-hover:h-7 transition-all duration-400" />
-                    {category.title}
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pl-5">
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill}
-                        className="text-[13px] text-[#B8C5D6] flex items-center gap-2.5 py-0.5 hover:text-[#D5E3F2] transition-colors duration-400"
-                      >
-                        <div className="w-1 h-1 rounded-full bg-white/10 flex-shrink-0" />
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="card-soft text-center"
+            >
+              <Mail className="w-6 h-6 mx-auto mb-3 text-[#0066FF]" />
+              <p className="text-sm font-semibold mb-1">Email</p>
+              <p className="text-sm text-[#6B7280]">sagar.sah.design@gmail.com</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="card-soft text-center"
+            >
+              <Briefcase className="w-6 h-6 mx-auto mb-3 text-[#FF6B35]" />
+              <p className="text-sm font-semibold mb-1">Status</p>
+              <p className="text-sm text-[#6B7280]">Available for projects</p>
+            </motion.div>
           </div>
         </div>
       </div>

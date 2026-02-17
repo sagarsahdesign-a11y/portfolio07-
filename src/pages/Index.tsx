@@ -10,22 +10,17 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="overflow-x-hidden scroll-smooth relative min-h-screen">
-      {/* Fixed spatial environment background */}
-      <div className="spatial-environment" />
-
-      {/* Floating premium SaaS container */}
-      <div className="relative z-10 max-w-[1400px] mx-auto my-8 rounded-3xl spatial-glass overflow-hidden shadow-2xl">
-        <HeroSection />
-        <ProjectsSection />
-        <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <TestimonialsSection />
-        <BuildingSection />
-        <ContactSection />
-        <Footer />
-      </div>
+    <div className="min-h-screen">
+      {/* All sections with light editorial theme */}
+      <HeroSection />
+      <ProjectsSection />
+      <AboutSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <TestimonialsSection />
+      <BuildingSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
