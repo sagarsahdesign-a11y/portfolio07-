@@ -1,312 +1,678 @@
 import { motion } from "framer-motion";
-import { Download, MapPin, Mail, Phone, Linkedin, ExternalLink } from "lucide-react";
+import { Download, Mail, Linkedin } from "lucide-react";
 
 const ResumePage = () => {
     return (
-        <div className="min-h-screen">
-            {/* Hero Header */}
-            <section className="section bg-white border-b border-[#E5E7EB]">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        {/* Back Link */}
-                        <motion.a
-                            href="/"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="inline-flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#1A1A1A] mb-8 transition-colors"
-                        >
-                            ← Back to Portfolio
-                        </motion.a>
+        <div className="min-h-screen" style={{ paddingTop: '80px' }}>
+            {/* Resume Card Container */}
+            <div style={{ padding: '60px 40px 80px', maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bk-card"
+                    style={{
+                        padding: '52px',
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }}
+                >
+                    {/* Decorative Orange Blur Circle */}
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '-60px',
+                        right: '-60px',
+                        width: '200px',
+                        height: '200px',
+                        borderRadius: '50%',
+                        background: 'rgba(255,92,26,0.06)',
+                        pointerEvents: 'none'
+                    }} />
+
+                    {/* Header with Avatar */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '24px',
+                        alignItems: 'flex-start',
+                        marginBottom: '36px',
+                        paddingBottom: '32px',
+                        borderBottom: '1px solid rgba(0,0,0,0.07)',
+                        position: 'relative'
+                    }}>
+                        {/* Avatar Circle */}
+                        <div style={{
+                            width: '80px',
+                            height: '80px',
+                            borderRadius: '50%',
+                            flexShrink: 0,
+                            background: 'linear-gradient(135deg,#1a1a2e,#16213e)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontFamily: 'Playfair Display',
+                            fontSize: '26px',
+                            fontWeight: 700,
+                            color: '#fff'
+                        }}>
+                            S
+                        </div>
 
                         {/* Name & Title */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="mb-8"
-                        >
-                            <h1 className="mb-4">Sagar Sah</h1>
-                            <p className="text-xl text-[#6B7280] mb-6">
-                                Product Designer (UI/UX) | Security-Aware Systems
+                        <div style={{ flex: 1 }}>
+                            <h1 style={{
+                                fontFamily: 'Playfair Display',
+                                fontSize: 'clamp(30px,4vw,44px)',
+                                fontWeight: 900,
+                                lineHeight: 1.1,
+                                marginBottom: '4px'
+                            }}>
+                                Sagar Sah
+                            </h1>
+                            <p style={{
+                                fontSize: '12px',
+                                letterSpacing: '0.12em',
+                                textTransform: 'uppercase',
+                                color: '#999999',
+                                marginTop: '4px'
+                            }}>
+                                Lead Product Designer
                             </p>
+                        </div>
 
-                            {/* Contact Info */}
-                            <div className="flex flex-wrap gap-4 text-sm text-[#6B7280]">
-                                <a href="mailto:sagar.sah.design@gmail.com" className="flex items-center gap-2 hover:text-[#0066FF] transition-colors">
-                                    <Mail size={16} />
-                                    sagar.sah.design@gmail.com
-                                </a>
-                                <a href="tel:+917416292404" className="flex items-center gap-2 hover:text-[#0066FF] transition-colors">
-                                    <Phone size={16} />
-                                    +91 74162 92404
-                                </a>
-                                <span className="flex items-center gap-2">
-                                    <MapPin size={16} />
-                                    Bengaluru, India
-                                </span>
+                        {/* Email & Links */}
+                        <div style={{
+                            marginLeft: 'auto',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '8px',
+                            alignItems: 'flex-end'
+                        }}>
+                            <div style={{
+                                fontSize: '13px',
+                                color: '#555555',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '6px'
+                            }}>
+                                <Mail size={14} />
+                                sagar.sah.design@gmail.com
                             </div>
-
-                            {/* Links */}
-                            <div className="flex flex-wrap gap-3 mt-6">
-                                <a
-                                    href="https://fearless-yards-788912.framer.app/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-pill text-sm inline-flex items-center gap-2"
-                                >
-                                    <ExternalLink size={14} />
-                                    Portfolio
-                                </a>
+                            <div style={{ display: 'flex', gap: '8px' }}>
                                 <a
                                     href="https://www.linkedin.com/in/sagar-shah-389980319/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn-pill text-sm inline-flex items-center gap-2"
+                                    className="bk-btn-icon"
                                 >
                                     <Linkedin size={14} />
-                                    LinkedIn
                                 </a>
                                 <a
                                     href="#/"
                                     className="text-sm text-muted hover:text-dark transition-colors inline-flex items-center gap-1"
                                 >
                                     <Download size={14} />
-                                    Download PDF
+                                    PDF
                                 </a>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
-                </div>
-            </section>
 
-            {/* Professional Summary */}
-            <section className="section">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-6">Professional Summary</h2>
-                            <p className="text-base text-[#6B7280] leading-relaxed">
-                                Product designer combining UI/UX expertise with a technical background in Cyber Security.
-                                Experienced in designing accessible web and mobile interfaces and collaborating with developers
-                                to deliver build-ready products. Bridges design and frontend implementation (HTML/CSS/JavaScript)
-                                while applying security-first principles to user workflows. UI/UX content creator with 9k+ followers
-                                sharing practical design insights and case studies.
+                    {/* "Hi there!" Bubble */}
+                    <div style={{
+                        background: '#ffffff',
+                        borderRadius: '14px',
+                        padding: '18px 22px',
+                        marginBottom: '40px',
+                        maxWidth: '560px',
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                        position: 'relative'
+                    }}>
+                        <p style={{
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: '#111111',
+                            marginBottom: '8px'
+                        }}>
+                            😎 Hi there!
+                        </p>
+                        <p style={{
+                            fontSize: '13.5px',
+                            lineHeight: '1.7',
+                            color: '#555555',
+                            marginBottom: '6px'
+                        }}>
+                            With 1+ year of freelance experience, building user-centric products for global clients. Combining UI/UX craft with Cyber Security knowledge and a passion for accessible design.
+                        </p>
+                        <p style={{
+                            fontSize: '12px',
+                            color: '#999999'
+                        }}>
+                            Sharing insights with 9k+ followers on LinkedIn & Instagram.
+                        </p>
+                    </div>
+
+                    {/* Two-Column Grid */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 280px',
+                        gap: '48px'
+                    }}>
+                        {/* Left: Experience */}
+                        <div>
+                            <p style={{
+                                fontSize: '11px',
+                                letterSpacing: '0.12em',
+                                textTransform: 'uppercase',
+                                color: '#999999',
+                                fontWeight: 600,
+                                marginBottom: '28px'
+                            }}>
+                                Experience — 1+ Year
                             </p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Skills & Technology */}
-            <section className="section bg-white">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-8">Skills & Technology</h2>
-
-                            <div className="space-y-6">
-                                {/* Core UX/UI */}
-                                <div>
-                                    <h4 className="font-semibold text-base mb-3 text-[#1A1A1A]">Core UX/UI</h4>
-                                    <p className="text-sm text-[#6B7280] leading-relaxed">
-                                        User research, information architecture, wireframing, interaction design, rapid prototyping,
-                                        design systems, accessibility (WCAG), responsive web & mobile design
-                                    </p>
-                                </div>
-
-                                {/* Design Strategy */}
-                                <div>
-                                    <h4 className="font-semibold text-base mb-3 text-[#1A1A1A]">Design Strategy</h4>
-                                    <p className="text-sm text-[#6B7280] leading-relaxed">
-                                        User-centered design, journey mapping, persona development, usability testing
-                                    </p>
-                                </div>
-
-                                {/* Tools */}
-                                <div>
-                                    <h4 className="font-semibold text-base mb-3 text-[#1A1A1A]">Tools</h4>
-                                    <p className="text-sm text-[#6B7280] leading-relaxed">
-                                        Figma (auto-layout, components), Framer, Adobe XD, Photoshop, Illustrator, Miro,
-                                        Webflow, Notion, Jira
-                                    </p>
-                                </div>
-
-                                {/* Development & Technical */}
-                                <div>
-                                    <h4 className="font-semibold text-base mb-3 text-[#1A1A1A]">Development & Technical</h4>
-                                    <p className="text-sm text-[#6B7280] leading-relaxed">
-                                        HTML5, CSS3, basic JavaScript, developer handoff documentation, secure authentication UX patterns
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Professional Experience */}
-            <section className="section">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-8">Professional Experience</h2>
-
-                            <div className="space-y-10">
-                                {/* Freelance Product Designer */}
-                                <div className="card-soft">
-                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                        <div>
-                                            <h3 className="text-xl mb-1">Freelance Product Designer</h3>
-                                            <p className="text-sm text-[#9CA3AF]">Remote</p>
-                                        </div>
-                                        <span className="text-sm font-medium text-[#6B7280] mt-2 md:mt-0">Jan 2024 – Present</span>
+                            {/* Freelance Company */}
+                            <div style={{ marginBottom: '36px' }}>
+                                {/* Company Header */}
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '12px',
+                                    marginBottom: '16px'
+                                }}>
+                                    {/* Company Logo Letter Circle */}
+                                    <div style={{
+                                        width: '38px',
+                                        height: '38px',
+                                        borderRadius: '10px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '16px',
+                                        fontWeight: 700,
+                                        color: '#fff',
+                                        flexShrink: 0,
+                                        background: '#ff5c1a'
+                                    }}>
+                                        F
                                     </div>
-                                    <ul className="space-y-2 text-sm text-[#6B7280]">
-                                        <li>• Spearheaded end-to-end UI/UX design for healthcare and e-commerce products, translating complex requirements into intuitive web and mobile interfaces</li>
-                                        <li>• Built scalable component libraries in Figma to improve visual consistency and streamline developer handoff</li>
-                                        <li>• Redesigned onboarding and checkout flows through usability testing and iterative design</li>
-                                        <li>• Collaborated with engineering teams using structured documentation (Jira/Notion) to implement secure authentication workflows</li>
+                                    <span style={{
+                                        fontFamily: 'Playfair Display',
+                                        fontSize: '22px',
+                                        fontWeight: 700
+                                    }}>
+                                        Freelance
+                                    </span>
+                                </div>
+
+                                {/* Lead Product Designer Role */}
+                                <div style={{
+                                    marginBottom: '18px',
+                                    paddingLeft: '16px',
+                                    borderLeft: '2px solid #dddddd'
+                                }}>
+                                    <div>
+                                        <span style={{
+                                            fontSize: '15px',
+                                            fontWeight: 600,
+                                            color: '#111111'
+                                        }}>
+                                            Lead Product Designer
+                                        </span>
+                                        <span style={{
+                                            fontSize: '12px',
+                                            color: '#ff5c1a',
+                                            fontWeight: 500,
+                                            marginLeft: '10px'
+                                        }}>
+                                            Jan 2024 – Present
+                                        </span>
+                                    </div>
+                                    <ul style={{
+                                        marginTop: '8px',
+                                        paddingLeft: '2px'
+                                    }}>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Spearheaded end-to-end UI/UX for healthcare and e-commerce products
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Built scalable component libraries in Figma to streamline developer handoff
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Redesigned onboarding and checkout flows through usability testing
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Collaborated with engineering teams using Jira/Notion for secure workflows
+                                        </li>
                                     </ul>
                                 </div>
 
-                                {/* Freelance UI Designer */}
-                                <div className="card-soft">
-                                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                        <div>
-                                            <h3 className="text-xl mb-1">Freelance UI Designer</h3>
-                                            <p className="text-sm text-[#9CA3AF]">Remote</p>
-                                        </div>
-                                        <span className="text-sm font-medium text-[#6B7280] mt-2 md:mt-0">Mar 2023 – Dec 2023</span>
+                                {/* UI/UX Designer Role */}
+                                <div style={{
+                                    paddingLeft: '16px',
+                                    borderLeft: '2px solid #dddddd'
+                                }}>
+                                    <div>
+                                        <span style={{
+                                            fontSize: '15px',
+                                            fontWeight: 600,
+                                            color: '#111111'
+                                        }}>
+                                            UI/UX Designer
+                                        </span>
+                                        <span style={{
+                                            fontSize: '12px',
+                                            color: '#ff5c1a',
+                                            fontWeight: 500,
+                                            marginLeft: '10px'
+                                        }}>
+                                            Mar 2023 – Dec 2023
+                                        </span>
                                     </div>
-                                    <ul className="space-y-2 text-sm text-[#6B7280]">
-                                        <li>• Designed modern dashboards for café management and B2B platforms, simplifying complex information for non-technical users</li>
-                                        <li>• Produced high-fidelity interactive prototypes in Framer to accelerate stakeholder feedback and approvals</li>
-                                        <li>• Delivered build-ready specifications (Figma + CSS guidance) to reduce design-to-development errors</li>
+                                    <ul style={{
+                                        marginTop: '8px',
+                                        paddingLeft: '2px'
+                                    }}>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Designed modern dashboards for café management and B2B platforms
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Produced high-fidelity prototypes in Framer to accelerate feedback
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Delivered build-ready Figma + CSS specs to reduce dev errors
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Key Projects */}
-            <section className="section bg-white">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-8">Key Projects</h2>
+                            {/* Key Projects */}
+                            <p style={{
+                                fontSize: '11px',
+                                letterSpacing: '0.12em',
+                                textTransform: 'uppercase',
+                                color: '#999999',
+                                fontWeight: 600,
+                                marginBottom: '28px',
+                                marginTop: '32px'
+                            }}>
+                                Key Projects
+                            </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                                 {/* ZenTrade */}
-                                <div className="card-soft">
-                                    <span className="tag mb-3">Lead Designer</span>
-                                    <h4 className="font-semibold text-base mb-2">ZenTrade</h4>
-                                    <p className="text-xs text-[#9CA3AF] mb-2">B2B Trading Platform</p>
-                                    <p className="text-sm text-[#6B7280]">
-                                        Redesigned dashboards and navigation to simplify complex workflows and improve usability.
-                                    </p>
-                                </div>
-
-                                {/* Phishing Awareness */}
-                                <div className="card-soft">
-                                    <span className="tag mb-3">Designer & Developer</span>
-                                    <h4 className="font-semibold text-base mb-2">Phishing Awareness Simulator</h4>
-                                    <p className="text-xs text-[#9CA3AF] mb-2">Educational Tool</p>
-                                    <p className="text-sm text-[#6B7280]">
-                                        Designed an interactive educational tool simulating real-world phishing scenarios.
-                                    </p>
+                                <div style={{
+                                    paddingLeft: '16px',
+                                    borderLeft: '2px solid #dddddd'
+                                }}>
+                                    <span style={{
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                        color: '#111111'
+                                    }}>
+                                        ZenTrade — B2B Trading Platform
+                                    </span>
+                                    <ul style={{
+                                        marginTop: '8px',
+                                        paddingLeft: '2px'
+                                    }}>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Redesigned dashboards to simplify complex workflows
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Implemented intuitive navigation and engaging layouts
+                                        </li>
+                                    </ul>
                                 </div>
 
                                 {/* FitPulse */}
-                                <div className="card-soft">
-                                    <span className="tag mb-3">UI/UX Designer</span>
-                                    <h4 className="font-semibold text-base mb-2">FitPulse</h4>
-                                    <p className="text-xs text-[#9CA3AF] mb-2">Health Tech App</p>
-                                    <p className="text-sm text-[#6B7280]">
-                                        Developed an accessibility-focused health dashboard using scalable design components.
-                                    </p>
+                                <div style={{
+                                    paddingLeft: '16px',
+                                    borderLeft: '2px solid #dddddd'
+                                }}>
+                                    <span style={{
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                        color: '#111111'
+                                    }}>
+                                        FitPulse — Health Tech App
+                                    </span>
+                                    <ul style={{
+                                        marginTop: '8px',
+                                        paddingLeft: '2px'
+                                    }}>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Built accessibility-focused health dashboard
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Enhanced accessibility for broader audience reach
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                {/* Phishing Simulator */}
+                                <div style={{
+                                    paddingLeft: '16px',
+                                    borderLeft: '2px solid #dddddd'
+                                }}>
+                                    <span style={{
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                        color: '#111111'
+                                    }}>
+                                        Phishing Awareness Simulator
+                                    </span>
+                                    <ul style={{
+                                        marginTop: '8px',
+                                        paddingLeft: '2px'
+                                    }}>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Designed interactive educational tool simulating phishing scenarios
+                                        </li>
+                                        <li style={{
+                                            fontSize: '13px',
+                                            lineHeight: '1.65',
+                                            color: '#555555',
+                                            marginBottom: '5px',
+                                            listStyle: 'disc',
+                                            marginLeft: '14px'
+                                        }}>
+                                            Developed engaging UI/UX flows for scenario engagement
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
+                        </div>
 
-            {/* Education */}
-            <section className="section">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-8">Education</h2>
-
-                            <div className="card-soft">
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                                    <div>
-                                        <h3 className="text-xl mb-1">B.Tech in Cyber Security</h3>
-                                        <p className="text-sm text-[#9CA3AF]">GIET College</p>
-                                    </div>
-                                    <span className="text-sm font-medium text-[#6B7280] mt-2 md:mt-0">Expected Mar 2027</span>
-                                </div>
-                                <p className="text-sm text-[#6B7280]">
-                                    Focus: Human-Computer Interaction (HCI), ethical hacking, network security, secure UI principles
+                        {/* Right: Sidebar */}
+                        <div>
+                            {/* Skills */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <p style={{
+                                    fontSize: '11px',
+                                    letterSpacing: '0.12em',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600,
+                                    color: '#999999',
+                                    marginBottom: '14px'
+                                }}>
+                                    Skills
                                 </p>
+                                <ul style={{ listStyle: 'none' }}>
+                                    {['Problem Discovery', 'User Research', 'Design Systems', 'Storytelling', 'High Fidelity Prototyping', 'Visual Design', 'UI Animation', 'Branding & Identity'].map((skill, i) => (
+                                        <li key={i} style={{
+                                            fontSize: '13.5px',
+                                            color: '#111111',
+                                            marginBottom: '7px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '6px'
+                                        }}>
+                                            <span style={{ color: '#ff5c1a' }}>•</span>
+                                            {skill}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Certifications & Leadership */}
-            <section className="section bg-white">
-                <div className="container">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-8">Certifications & Leadership</h2>
+                            {/* Tools */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <p style={{
+                                    fontSize: '11px',
+                                    letterSpacing: '0.12em',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600,
+                                    color: '#999999',
+                                    marginBottom: '14px'
+                                }}>
+                                    Tools
+                                </p>
+                                <ul style={{ listStyle: 'none' }}>
+                                    {['Figma', 'Framer', 'Adobe XD', 'Adobe Illustrator', 'Adobe Photoshop', 'Webflow', 'Miro / Notion'].map((tool, i) => (
+                                        <li key={i} style={{
+                                            fontSize: '13.5px',
+                                            color: '#111111',
+                                            marginBottom: '7px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '6px'
+                                        }}>
+                                            <span style={{ color: '#ff5c1a' }}>•</span>
+                                            {tool}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
-                            <div className="space-y-4">
-                                <div className="card-soft">
-                                    <h4 className="font-semibold text-base mb-2">UI/UX Certifications</h4>
-                                    <p className="text-sm text-[#6B7280]">
-                                        Adobe XD, Figma, and Framer
+                            {/* Education */}
+                            <div style={{ marginBottom: '32px' }}>
+                                <p style={{
+                                    fontSize: '11px',
+                                    letterSpacing: '0.12em',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600,
+                                    color: '#999999',
+                                    marginBottom: '14px'
+                                }}>
+                                    Education
+                                </p>
+                                <div style={{ marginBottom: '16px' }}>
+                                    <h4 style={{
+                                        fontSize: '14px',
+                                        fontWeight: 600,
+                                        lineHeight: '1.4'
+                                    }}>
+                                        B.Tech in Cyber Security
+                                    </h4>
+                                    <p style={{
+                                        fontSize: '12.5px',
+                                        color: '#999999',
+                                        marginTop: '2px'
+                                    }}>
+                                        GIET College, Rajamandry<br />
+                                        2023 – 2027
                                     </p>
                                 </div>
-
-                                <div className="card-soft">
-                                    <h4 className="font-semibold text-base mb-2">Design Community Leadership</h4>
-                                    <p className="text-sm text-[#6B7280]">
-                                        Founder of a design community with 9k+ followers on LinkedIn and Instagram
+                                <div>
+                                    <h4 style={{
+                                        fontSize: '14px',
+                                        fontWeight: 600,
+                                        lineHeight: '1.4'
+                                    }}>
+                                        High School (Science)
+                                    </h4>
+                                    <p style={{
+                                        fontSize: '12.5px',
+                                        color: '#999999',
+                                        marginTop: '2px'
+                                    }}>
+                                        DAV College, Kathmandu<br />
+                                        2020 – 2022
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+
+                            {/* Languages */}
+                            <div>
+                                <p style={{
+                                    fontSize: '11px',
+                                    letterSpacing: '0.12em',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600,
+                                    color: '#999999',
+                                    marginBottom: '14px'
+                                }}>
+                                    Languages
+                                </p>
+                                <ul style={{ listStyle: 'none' }}>
+                                    {['English', 'Hindi', 'Nepali'].map((lang, i) => (
+                                        <li key={i} style={{
+                                            fontSize: '13.5px',
+                                            color: '#111111',
+                                            marginBottom: '7px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '6px'
+                                        }}>
+                                            <span style={{ color: '#ff5c1a' }}>•</span>
+                                            {lang}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+                </motion.div>
+            </div>
+
+            {/* Footer */}
+            <footer style={{
+                background: '#0e0e0e',
+                padding: '80px 40px 60px',
+                marginTop: 'auto'
+            }}>
+                <h2 style={{
+                    fontFamily: 'Playfair Display',
+                    fontSize: 'clamp(40px,6vw,72px)',
+                    fontWeight: 900,
+                    color: '#fff',
+                    marginBottom: '28px',
+                    lineHeight: 1
+                }}>
+                    Let's have a word?
+                </h2>
+                <a
+                    href="mailto:sagar.sah.design@gmail.com"
+                    className="bk-btn-circle inline-flex"
+                    style={{
+                        marginBottom: '52px',
+                        width: '56px',
+                        height: '56px'
+                    }}
+                >
+                    <svg viewBox="0 0 24 24" style={{ width: '20px', height: '20px' }}>
+                        <polyline points="9 18 15 12 9 6" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </a>
+                <div style={{ marginBottom: '32px' }}>
+                    <p style={{ color: '#fff', fontWeight: 600, fontSize: '16px', marginBottom: '4px' }}>Sagar Sah</p>
+                    <span style={{ color: '#777', fontSize: '14px' }}>sagar.sah.design@gmail.com</span>
                 </div>
-            </section>
+                <div style={{ display: 'flex', gap: '32px', flexWrap: 'wrap' }}>
+                    <a
+                        href="https://www.linkedin.com/in/sagar-shah-389980319/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            textDecoration: 'none',
+                            color: '#ccc',
+                            fontSize: '14px',
+                            transition: 'color 0.2s'
+                        }}
+                    >
+                        <div style={{
+                            width: '32px',
+                            height: '32px',
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '13px',
+                            fontWeight: 700,
+                            background: '#0077b5',
+                            color: '#fff'
+                        }}>
+                            in
+                        </div>
+                        LinkedIn
+                    </a>
+                </div>
+            </footer>
         </div>
     );
 };
