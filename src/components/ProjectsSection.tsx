@@ -84,7 +84,7 @@ const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="bk-btn-circle inline-flex"
                   >
-                    <Arrow Right className="w-5 h-5" strokeWidth={2} />
+                    <ArrowRight className="w-5 h-5" strokeWidth={2} />
                   </a>
                 </div>
               </div>
