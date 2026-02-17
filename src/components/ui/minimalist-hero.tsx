@@ -23,52 +23,231 @@ export function BikironHero({
 
     return (
         <>
-            {/* Navigation - Exact Bikiron Match */}
-            <nav className="bk-nav">
-                <div className="bk-nav-inner">
-                    {/* Left: Social Icons */}
-                    <div className="bk-nav-links">
-                        <a href="#/" className="bk-btn-icon">
-                            <Home size={18} />
+            {/* Navigation - Bikiron.in Style - LIGHT THEME */}
+            <nav style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 200,
+                background: 'rgba(245,246,249,0.92)',
+                backdropFilter: 'blur(16px)',
+                borderBottom: '1px solid rgba(0,0,0,0.07)',
+                height: '64px'
+            }}>
+                <div style={{
+                    maxWidth: '1200px',
+                    margin: '0 auto',
+                    padding: '0 40px',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                }}>
+                    {/* Left: Social Icon Buttons */}
+                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                        {/* Home - Black filled */}
+                        <a
+                            href="#/"
+                            style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '50%',
+                                background: '#111111',
+                                color: '#ffffff',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textDecoration: 'none',
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = '#FF5E1A'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = '#111111'}
+                        >
+                            <Home size={16} strokeWidth={2.5} />
                         </a>
+
+                        {/* LinkedIn - White with border */}
                         <a
                             href="https://www.linkedin.com/in/sagar-shah-389980319/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bk-btn-icon"
+                            style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '50%',
+                                background: '#ffffff',
+                                border: '1.5px solid #cccccc',
+                                color: '#111111',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textDecoration: 'none',
+                                fontSize: '13px',
+                                fontWeight: 700,
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = '#111111';
+                                e.currentTarget.style.color = '#ffffff';
+                                e.currentTarget.style.borderColor = '#111111';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = '#ffffff';
+                                e.currentTarget.style.color = '#111111';
+                                e.currentTarget.style.borderColor = '#cccccc';
+                            }}
                         >
-                            <Linkedin size={18} />
+                            in
                         </a>
+
+                        {/* Twitter/X - White with border */}
                         <a
                             href="https://x.com/Sagarshahas"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bk-btn-icon"
+                            style={{
+                                width: '36px',
+                                height: '36px',
+                                borderRadius: '50%',
+                                background: '#ffffff',
+                                border: '1.5px solid #cccccc',
+                                color: '#111111',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                textDecoration: 'none',
+                                fontSize: '13px',
+                                fontWeight: 700,
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = '#111111';
+                                e.currentTarget.style.color = '#ffffff';
+                                e.currentTarget.style.borderColor = '#111111';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = '#ffffff';
+                                e.currentTarget.style.color = '#111111';
+                                e.currentTarget.style.borderColor = '#cccccc';
+                            }}
                         >
-                            <Twitter size={18} />
+                            𝕏
                         </a>
                     </div>
 
-                    {/* Desktop: Pills and Links */}
-                    <div className="bk-nav-links hidden md:flex">
-                        <a href="#/resume" className="bk-btn bk-btn-pill bk-btn-pill-dark">
+                    {/* Right: Nav Links - Desktop Only */}
+                    <div className="hidden md:flex" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                        {/* View Resumé - Dark pill */}
+                        <a
+                            href="#/resume"
+                            style={{
+                                background: '#111111',
+                                color: '#ffffff',
+                                borderRadius: '99px',
+                                padding: '9px 22px',
+                                fontSize: '13.5px',
+                                fontWeight: 500,
+                                textDecoration: 'none',
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = '#333333'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = '#111111'}
+                        >
                             View Resumé
                         </a>
-                        <a href="#/philosophy" className="bk-nav-link">
+
+                        {/* Design Philosophy - Plain link */}
+                        <a
+                            href="#/philosophy"
+                            style={{
+                                color: '#666666',
+                                fontSize: '13.5px',
+                                fontWeight: 500,
+                                textDecoration: 'none',
+                                padding: '8px 18px',
+                                borderRadius: '99px',
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = '#111111';
+                                e.currentTarget.style.background = 'rgba(0,0,0,0.06)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = '#666666';
+                                e.currentTarget.style.background = 'transparent';
+                            }}
+                        >
                             Design Philosophy
                         </a>
-                        <a href="#/life" className="bk-nav-link">
+
+                        {/* Life & Stories - Plain link */}
+                        <a
+                            href="#/life"
+                            style={{
+                                color: '#666666',
+                                fontSize: '13.5px',
+                                fontWeight: 500,
+                                textDecoration: 'none',
+                                padding: '8px 18px',
+                                borderRadius: '99px',
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.color = '#111111';
+                                e.currentTarget.style.background = 'rgba(0,0,0,0.06)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.color = '#666666';
+                                e.currentTarget.style.background = 'transparent';
+                            }}
+                        >
                             Life & Stories
                         </a>
-                        <a href="#/services" className="bk-btn bk-btn-pill bk-btn-pill-orange">
+
+                        {/* Services I offer - Orange pill */}
+                        <a
+                            href="#/services"
+                            style={{
+                                background: '#FF5E1A',
+                                color: '#ffffff',
+                                borderRadius: '99px',
+                                padding: '9px 22px',
+                                fontSize: '13.5px',
+                                fontWeight: 500,
+                                textDecoration: 'none',
+                                transition: 'all 0.2s',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = '#e04a0a'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = '#FF5E1A'}
+                        >
                             Services I offer
                         </a>
                     </div>
 
-                    {/* Mobile: Hamburger Menu */}
+                    {/* Mobile: Hamburger Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="bk-btn-icon md:hidden"
+                        className="md:hidden"
+                        style={{
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            background: '#ffffff',
+                            border: '1.5px solid #dddddd',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                        }}
                         aria-label="Toggle menu"
                     >
                         {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -83,38 +262,85 @@ export function BikironHero({
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="md:hidden overflow-hidden bg-white border-t border-[rgba(0,0,0,0.07)]"
+                            className="md:hidden"
+                            style={{
+                                overflow: 'hidden',
+                                background: '#ffffff',
+                                borderTop: '1px solid rgba(0,0,0,0.06)'
+                            }}
                         >
-                            <div className="flex flex-col" style={{ padding: '16px 24px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                {/* View Resumé */}
                                 <a
                                     href="#/resume"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="bk-btn-pill bk-btn-pill-dark mb-3"
-                                    style={{ width: '100%', justifyContent: 'center', fontSize: '15px', height: '48px' }}
+                                    style={{
+                                        padding: '14px 24px',
+                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                        color: '#111111',
+                                        textDecoration: 'none',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                                 >
                                     View Resumé
                                 </a>
+
+                                {/* Design Philosophy */}
                                 <a
                                     href="#/philosophy"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="py-3 border-b border-[rgba(0,0,0,0.07)] text-[#555555] hover:text-[#111111] transition-colors"
-                                    style={{ fontSize: '15px' }}
+                                    style={{
+                                        padding: '14px 24px',
+                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
+                                        fontSize: '15px',
+                                        fontWeight: 400,
+                                        color: '#555555',
+                                        textDecoration: 'none',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                                 >
                                     Design Philosophy
                                 </a>
+
+                                {/* Life & Stories */}
                                 <a
                                     href="#/life"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="py-3 border-b border-[rgba(0,0,0,0.07)] text-[#555555] hover:text-[#111111] transition-colors"
-                                    style={{ fontSize: '15px' }}
+                                    style={{
+                                        padding: '14px 24px',
+                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
+                                        fontSize: '15px',
+                                        fontWeight: 400,
+                                        color: '#555555',
+                                        textDecoration: 'none',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                                 >
                                     Life & Stories
                                 </a>
+
+                                {/* Services I offer */}
                                 <a
                                     href="#/services"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="bk-btn-pill bk-btn-pill-orange mt-3"
-                                    style={{ width: '100%', justifyContent: 'center', fontSize: '15px', height: '48px' }}
+                                    style={{
+                                        padding: '14px 24px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                        color: '#FF5E1A',
+                                        textDecoration: 'none',
+                                        transition: 'background 0.2s'
+                                    }}
+                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
+                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                                 >
                                     Services I offer
                                 </a>
@@ -212,7 +438,7 @@ export function BikironHero({
                                 {description}
                             </motion.p>
 
-                            {/* Orange Circle Arrow CTA - Updated to 56px - CENTERED */}
+                            {/* Orange Circle Arrow CTA - CENTERED ON BOTH MOBILE & DESKTOP */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
