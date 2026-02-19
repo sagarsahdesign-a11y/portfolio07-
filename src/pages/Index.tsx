@@ -1,19 +1,26 @@
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
 import BuildingSection from "@/components/BuildingSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import Footer from "@/components/Footer";
+import SkillsSection from "@/components/SkillsSection";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
+      {/* Section 1 — Hero */}
       <HeroSection />
-      <AboutSection />
+
+      {/* Section 2 — Currently Cooking */}
       <BuildingSection />
+
+      {/* Section 3 — Recently Made */}
       <ProjectsSection />
-      <TestimonialsSection />
-      <Footer />
+
+      {/* Section 4 — Other Work */}
+      <SkillsSection />
+
+      {/* Section 5 — About */}
+      <AboutSection />
     </div>
   );
 };

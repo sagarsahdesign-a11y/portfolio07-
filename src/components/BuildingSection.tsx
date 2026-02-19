@@ -2,26 +2,33 @@ import { motion } from "framer-motion";
 
 const BuildingSection = () => {
   return (
-    <section className="s-section" style={{ paddingTop: 0 }}>
-      <div className="s-container">
-        <div className="s-stats">
-          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="s-stat-num">9K+</p>
-            <p className="s-stat-label">Followers</p>
-          </motion.div>
-          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}>
-            <p className="s-stat-num">2+</p>
-            <p className="s-stat-label">Years Exp</p>
-          </motion.div>
-          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.16 }}>
-            <p className="s-stat-num">10+</p>
-            <p className="s-stat-label">Projects</p>
-          </motion.div>
-          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.24 }}>
-            <p className="s-stat-num">∞</p>
-            <p className="s-stat-label">Curiosity</p>
-          </motion.div>
-        </div>
+    <section id="cooking" className="jh-section">
+      <div className="jh-wrap">
+        <motion.p className="jh-label"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Currently cooking 🍳
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          <p className="jh-cooking-text">
+            Designing something new called{' '}
+            <span className="jh-cooking-project">🎨 Daily UI/UX Content</span>.
+          </p>
+          <p className="jh-cooking-text">
+            A daily design content series helping aspiring designers learn UI/UX through real case studies, teardowns, and tips. Building in public on LinkedIn & Instagram.
+          </p>
+          <p className="jh-cooking-text">
+            Follow along on LinkedIn & Instagram. 📲
+          </p>
+        </motion.div>
       </div>
     </section>
   );
