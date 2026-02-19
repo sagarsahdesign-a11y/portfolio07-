@@ -2,50 +2,76 @@ import { motion } from "framer-motion";
 
 const BuildingSection = () => {
   return (
-    <section className="jk-section">
-      <div className="jk-container">
-        <motion.p
-          className="jk-section-label"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Currently cooking ☺︎
-        </motion.p>
+    <section className="port-section" style={{ paddingBottom: '40px' }}>
+      <div className="port-container">
+        {/* Stats Grid */}
+        <div className="port-stats-grid">
+          <motion.div
+            className="port-stat-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="port-stat-num">9K+</p>
+            <p className="port-stat-label">Instagram Followers</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
+              Sharing UI/UX design insights & case studies
+            </p>
+          </motion.div>
 
+          <motion.div
+            className="port-stat-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <p className="port-stat-num">2+</p>
+            <p className="port-stat-label">Years of Experience</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
+              Secure SaaS interfaces & design systems
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="port-stat-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <p className="port-stat-num">10+</p>
+            <p className="port-stat-label">Projects Shipped</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
+              Mobile apps, dashboards & design systems
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="port-stat-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <p className="port-stat-num">∞</p>
+            <p className="port-stat-label">Currently Cooking</p>
+            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
+              Design systems for secure SaaS products
+            </p>
+          </motion.div>
+        </div>
+
+        {/* CTA */}
         <motion.div
-          className="jk-cooking-card"
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          style={{ textAlign: 'center', marginTop: '40px' }}
         >
-          <p style={{
-            fontSize: '13px',
-            color: 'var(--text-muted)',
-            lineHeight: '1.8',
-            marginBottom: '12px'
-          }}>
-            Designing something new called{' '}
-            <span style={{ fontWeight: 700, color: 'var(--text-dark)' }}>
-              🌿 Design Systems for Secure SaaS
-            </span>
-          </p>
-          <p style={{
-            fontSize: '12px',
-            color: 'var(--text-light)',
-            lineHeight: '1.7'
-          }}>
-            Exploring the intersection of design, security, and developer experience
-            to create scalable component libraries that ship faster.
-          </p>
-          <p style={{
-            fontSize: '12px',
-            color: 'var(--text-light)',
-            marginTop: '12px'
-          }}>
-            Stay tuned for updates. ✈️
-          </p>
+          <a href="#work" className="port-btn port-btn-accent">
+            Go see my work ↓
+          </a>
         </motion.div>
       </div>
     </section>

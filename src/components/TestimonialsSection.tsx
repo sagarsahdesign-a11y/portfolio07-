@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 const testimonials = [
     {
         name: "Supriya Raghavendra",
-        role: "ex- Design manager, Swiggy",
+        role: "ex- Design Manager, Swiggy",
         quote: "Sagar is an exceptionally dedicated product designer with an impressive level of proactivity. His work demonstrates strong attention to detail and user-centered thinking.",
         avatar: "SR"
     },
     {
         name: "Arvind Ganeshan",
-        role: "VP product, Hiver",
+        role: "VP Product, Hiver",
         quote: "Sagar is a great value add to any product team and I would highly recommend him to any design or product leader looking for dedicated design talent.",
         avatar: "AG"
     }
@@ -17,42 +17,64 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     return (
-        <section id="recommendations" className="bk-section bg-white">
-            <div className="bk-container">
-                {/* Header */}
+        <section className="port-section" style={{ background: 'var(--bg-cream)', paddingTop: '40px' }}>
+            <div className="port-container">
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    className="port-label"
+                    initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bk-label text-center mb-12"
                 >
-                    RECOMMENDATIONS
+                    WHAT THEY SAY
                 </motion.p>
 
-                {/* Testimonial Cards - Horizontal Scroll */}
-                <div className="flex gap-6 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-                    {testimonials.map((testimonial, index) => (
+                <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+                    {testimonials.map((t, i) => (
                         <motion.div
-                            key={index}
+                            key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bk-testimonial flex-shrink-0"
+                            transition={{ delay: i * 0.1 }}
+                            style={{
+                                flex: '1 1 320px',
+                                background: 'white',
+                                borderRadius: '20px',
+                                padding: '32px',
+                                border: '1px solid var(--border)',
+                                transition: 'all 0.3s ease'
+                            }}
                         >
                             {/* Quote */}
-                            <p className="bk-testimonial-quote mb-6">
-                                "{testimonial.quote}"
+                            <p style={{
+                                fontSize: '14px',
+                                color: 'var(--text-muted)',
+                                lineHeight: '1.8',
+                                fontStyle: 'italic',
+                                marginBottom: '24px'
+                            }}>
+                                "{t.quote}"
                             </p>
 
                             {/* Author */}
-                            <div className="bk-testimonial-author">
-                                <div className="bk-testimonial-avatar">
-                                    {testimonial.avatar}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '50%',
+                                    background: 'var(--bg-cream)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: 700,
+                                    fontSize: '13px',
+                                    color: 'var(--accent)'
+                                }}>
+                                    {t.avatar}
                                 </div>
                                 <div>
-                                    <p className="bk-testimonial-name">{testimonial.name}</p>
-                                    <p className="bk-testimonial-role">{testimonial.role}</p>
+                                    <p style={{ fontWeight: 600, fontSize: '14px' }}>{t.name}</p>
+                                    <p style={{ fontSize: '12px', color: 'var(--text-light)' }}>{t.role}</p>
                                 </div>
                             </div>
                         </motion.div>
