@@ -17,64 +17,33 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     return (
-        <section className="port-section" style={{ background: 'var(--bg-cream)', paddingTop: '40px' }}>
-            <div className="port-container">
+        <section className="s-section" style={{ paddingTop: 0 }}>
+            <div className="s-container">
                 <motion.p
-                    className="port-label"
+                    className="s-label"
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    WHAT THEY SAY
+                    Recommendations
                 </motion.p>
 
-                <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+                <div className="s-testimonials">
                     {testimonials.map((t, i) => (
                         <motion.div
                             key={i}
+                            className="s-testimonial"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            style={{
-                                flex: '1 1 320px',
-                                background: 'white',
-                                borderRadius: '20px',
-                                padding: '32px',
-                                border: '1px solid var(--border)',
-                                transition: 'all 0.3s ease'
-                            }}
                         >
-                            {/* Quote */}
-                            <p style={{
-                                fontSize: '14px',
-                                color: 'var(--text-muted)',
-                                lineHeight: '1.8',
-                                fontStyle: 'italic',
-                                marginBottom: '24px'
-                            }}>
-                                "{t.quote}"
-                            </p>
-
-                            {/* Author */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <div style={{
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '50%',
-                                    background: 'var(--bg-cream)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontWeight: 700,
-                                    fontSize: '13px',
-                                    color: 'var(--accent)'
-                                }}>
-                                    {t.avatar}
-                                </div>
+                            <p className="s-testimonial-quote">"{t.quote}"</p>
+                            <div className="s-testimonial-author">
+                                <div className="s-testimonial-avatar">{t.avatar}</div>
                                 <div>
-                                    <p style={{ fontWeight: 600, fontSize: '14px' }}>{t.name}</p>
-                                    <p style={{ fontSize: '12px', color: 'var(--text-light)' }}>{t.role}</p>
+                                    <p className="s-testimonial-name">{t.name}</p>
+                                    <p className="s-testimonial-role">{t.role}</p>
                                 </div>
                             </div>
                         </motion.div>

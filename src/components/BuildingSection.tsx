@@ -2,77 +2,26 @@ import { motion } from "framer-motion";
 
 const BuildingSection = () => {
   return (
-    <section className="port-section" style={{ paddingBottom: '40px' }}>
-      <div className="port-container">
-        {/* Stats Grid */}
-        <div className="port-stats-grid">
-          <motion.div
-            className="port-stat-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="port-stat-num">9K+</p>
-            <p className="port-stat-label">Instagram Followers</p>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
-              Sharing UI/UX design insights & case studies
-            </p>
+    <section className="s-section" style={{ paddingTop: 0 }}>
+      <div className="s-container">
+        <div className="s-stats">
+          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <p className="s-stat-num">9K+</p>
+            <p className="s-stat-label">Followers</p>
           </motion.div>
-
-          <motion.div
-            className="port-stat-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <p className="port-stat-num">2+</p>
-            <p className="port-stat-label">Years of Experience</p>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
-              Secure SaaS interfaces & design systems
-            </p>
+          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}>
+            <p className="s-stat-num">2+</p>
+            <p className="s-stat-label">Years Exp</p>
           </motion.div>
-
-          <motion.div
-            className="port-stat-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <p className="port-stat-num">10+</p>
-            <p className="port-stat-label">Projects Shipped</p>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
-              Mobile apps, dashboards & design systems
-            </p>
+          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.16 }}>
+            <p className="s-stat-num">10+</p>
+            <p className="s-stat-label">Projects</p>
           </motion.div>
-
-          <motion.div
-            className="port-stat-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <p className="port-stat-num">∞</p>
-            <p className="port-stat-label">Currently Cooking</p>
-            <p style={{ fontSize: '12px', color: 'var(--text-light)', marginTop: '4px' }}>
-              Design systems for secure SaaS products
-            </p>
+          <motion.div className="s-stat" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.24 }}>
+            <p className="s-stat-num">∞</p>
+            <p className="s-stat-label">Curiosity</p>
           </motion.div>
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ textAlign: 'center', marginTop: '40px' }}
-        >
-          <a href="#work" className="port-btn port-btn-accent">
-            Go see my work ↓
-          </a>
-        </motion.div>
       </div>
     </section>
   );

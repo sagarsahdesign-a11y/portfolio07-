@@ -7,8 +7,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-cream)' }}>
-      {/* Premium Portfolio Layout */}
+    <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       <HeroSection />
       <AboutSection />
       <BuildingSection />
