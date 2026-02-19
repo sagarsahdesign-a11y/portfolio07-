@@ -1,26 +1,18 @@
 import HeroSection from "@/components/HeroSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import AboutSection from "@/components/AboutSection";
-import ExperienceSection from "@/components/ExperienceSection";
 import BuildingSection from "@/components/BuildingSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      {/* All sections with light editorial theme */}
+    <div className="min-h-screen" style={{ background: 'var(--bg-page)' }}>
+      {/* Jackie Hu Style Single-Page Layout */}
       <HeroSection />
-      <ProjectsSection />
-      <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <TestimonialsSection />
       <BuildingSection />
-      <ContactSection />
-      <Footer />
+      <ProjectsSection />
+      <SkillsSection />
+      <AboutSection />
     </div>
   );
 };

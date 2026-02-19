@@ -19,450 +19,192 @@ export function BikironHero({
     title2,
     description,
 }: BikironHeroProps) {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
     return (
         <>
-            {/* Navigation - Bikiron.in Style - LIGHT THEME */}
-            <nav style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 200,
-                background: 'rgba(245,246,249,0.92)',
-                backdropFilter: 'blur(16px)',
-                borderBottom: '1px solid rgba(0,0,0,0.07)',
-                height: '64px'
-            }}>
-                <div style={{
-                    maxWidth: '1200px',
-                    margin: '0 auto',
-                    padding: '0 40px',
-                    height: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
-                }}>
-                    {/* Left: Social Icon Buttons */}
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                        {/* Home - Black filled */}
-                        <a
-                            href="#/"
-                            style={{
-                                width: '36px',
-                                height: '36px',
-                                borderRadius: '50%',
-                                background: '#111111',
-                                color: '#ffffff',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                textDecoration: 'none',
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.background = '#FF5E1A'}
-                            onMouseLeave={(e) => e.currentTarget.style.background = '#111111'}
-                        >
-                            <Home size={16} strokeWidth={2.5} />
-                        </a>
+            {/* Jackie Hu Style Hero - Scattered Images + Centered Name */}
+            <section className="jk-hero">
+                {/* Floating Decorative Images */}
+                {/* Top-left cluster */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=160&h=200&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    style={{
+                        top: '8%', left: '3%',
+                        width: '140px', height: '175px',
+                        objectFit: 'cover',
+                        transform: 'rotate(-6deg)'
+                    }}
+                />
 
-                        {/* LinkedIn - White with border */}
+                {/* Top-left small - notebook/pen */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=120&h=120&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.8 }}
+                    style={{
+                        top: '18%', left: '16%',
+                        width: '110px', height: '110px',
+                        objectFit: 'cover',
+                        transform: 'rotate(3deg)'
+                    }}
+                />
+
+                {/* Top-right - vinyl record */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=160&h=160&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    style={{
+                        top: '5%', right: '5%',
+                        width: '130px', height: '130px',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                        transform: 'rotate(8deg)'
+                    }}
+                />
+
+                {/* Right side - gradient/colorful */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1557683316-973673baf926?w=160&h=200&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    style={{
+                        top: '22%', right: '4%',
+                        width: '130px', height: '170px',
+                        objectFit: 'cover',
+                        transform: 'rotate(4deg)'
+                    }}
+                />
+
+                {/* Bottom-left - plant/nature */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=140&h=140&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    style={{
+                        bottom: '12%', left: '6%',
+                        width: '120px', height: '120px',
+                        objectFit: 'cover',
+                        transform: 'rotate(-3deg)'
+                    }}
+                />
+
+                {/* Bottom-right - folder/tech */}
+                <motion.img
+                    src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=140&h=140&fit=crop&q=80"
+                    alt=""
+                    className="jk-float-img"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.55, duration: 0.8 }}
+                    style={{
+                        bottom: '15%', right: '8%',
+                        width: '110px', height: '110px',
+                        objectFit: 'cover',
+                        transform: 'rotate(5deg)'
+                    }}
+                />
+
+                {/* Center Content */}
+                <div className="jk-hero-center">
+                    <motion.h1
+                        className="jk-hero-name"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1, duration: 0.6 }}
+                    >
+                        Sagar Sah
+                    </motion.h1>
+
+                    <motion.p
+                        className="jk-hero-role"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                    >
+                        Product Design
+                    </motion.p>
+
+                    <motion.p
+                        className="jk-hero-role"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.35, duration: 0.6 }}
+                        style={{ fontSize: '12px', color: 'var(--text-light)' }}
+                    >
+                        Verb & Noun
+                    </motion.p>
+
+                    <motion.p
+                        className="jk-hero-tagline"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.45, duration: 0.6 }}
+                    >
+                        a thoughtful process of crafting experiences that engage people, shape clarity, and spark delights.
+                    </motion.p>
+
+                    {/* Social Icons */}
+                    <motion.div
+                        className="jk-social"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.55, duration: 0.6 }}
+                    >
                         <a
                             href="https://www.linkedin.com/in/sagar-shah-389980319/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{
-                                width: '36px',
-                                height: '36px',
-                                borderRadius: '50%',
-                                background: '#ffffff',
-                                border: '1.5px solid #cccccc',
-                                color: '#111111',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                textDecoration: 'none',
-                                fontSize: '13px',
-                                fontWeight: 700,
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = '#111111';
-                                e.currentTarget.style.color = '#ffffff';
-                                e.currentTarget.style.borderColor = '#111111';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = '#ffffff';
-                                e.currentTarget.style.color = '#111111';
-                                e.currentTarget.style.borderColor = '#cccccc';
-                            }}
+                            className="jk-social-btn"
+                            title="LinkedIn"
                         >
-                            in
+                            <Linkedin size={16} />
                         </a>
-
-                        {/* Twitter/X - White with border */}
                         <a
-                            href="https://x.com/Sagarshahas"
+                            href="https://www.behance.net/sagarsah7"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{
-                                width: '36px',
-                                height: '36px',
-                                borderRadius: '50%',
-                                background: '#ffffff',
-                                border: '1.5px solid #cccccc',
-                                color: '#111111',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                textDecoration: 'none',
-                                fontSize: '13px',
-                                fontWeight: 700,
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = '#111111';
-                                e.currentTarget.style.color = '#ffffff';
-                                e.currentTarget.style.borderColor = '#111111';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = '#ffffff';
-                                e.currentTarget.style.color = '#111111';
-                                e.currentTarget.style.borderColor = '#cccccc';
-                            }}
+                            className="jk-social-btn"
+                            title="Behance"
+                            style={{ fontWeight: 700, fontSize: '13px' }}
                         >
-                            𝕏
+                            Bē
                         </a>
-                    </div>
-
-                    {/* Right: Nav Links - Desktop Only */}
-                    <div className="hidden md:flex" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                        {/* View Resumé - Dark pill */}
                         <a
-                            href="#/resume"
-                            style={{
-                                background: '#111111',
-                                color: '#ffffff',
-                                borderRadius: '99px',
-                                padding: '9px 22px',
-                                fontSize: '13.5px',
-                                fontWeight: 500,
-                                textDecoration: 'none',
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.background = '#333333'}
-                            onMouseLeave={(e) => e.currentTarget.style.background = '#111111'}
+                            href="mailto:sagar.sah.design@gmail.com"
+                            className="jk-social-btn"
+                            title="Email"
+                            style={{ fontSize: '16px' }}
                         >
-                            View Resumé
+                            ✉
                         </a>
+                    </motion.div>
 
-                        {/* Design Philosophy - Plain link */}
-                        <a
-                            href="#/philosophy"
-                            style={{
-                                color: '#666666',
-                                fontSize: '13.5px',
-                                fontWeight: 500,
-                                textDecoration: 'none',
-                                padding: '8px 18px',
-                                borderRadius: '99px',
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.color = '#111111';
-                                e.currentTarget.style.background = 'rgba(0,0,0,0.06)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.color = '#666666';
-                                e.currentTarget.style.background = 'transparent';
-                            }}
-                        >
-                            Design Philosophy
-                        </a>
-
-                        {/* Life & Stories - Plain link */}
-                        <a
-                            href="#/life"
-                            style={{
-                                color: '#666666',
-                                fontSize: '13.5px',
-                                fontWeight: 500,
-                                textDecoration: 'none',
-                                padding: '8px 18px',
-                                borderRadius: '99px',
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.color = '#111111';
-                                e.currentTarget.style.background = 'rgba(0,0,0,0.06)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.color = '#666666';
-                                e.currentTarget.style.background = 'transparent';
-                            }}
-                        >
-                            Life & Stories
-                        </a>
-
-                        {/* Services I offer - Orange pill */}
-                        <a
-                            href="#/services"
-                            style={{
-                                background: '#FF5E1A',
-                                color: '#ffffff',
-                                borderRadius: '99px',
-                                padding: '9px 22px',
-                                fontSize: '13.5px',
-                                fontWeight: 500,
-                                textDecoration: 'none',
-                                transition: 'all 0.2s',
-                                cursor: 'pointer'
-                            }}
-                            onMouseEnter={(e) => e.currentTarget.style.background = '#e04a0a'}
-                            onMouseLeave={(e) => e.currentTarget.style.background = '#FF5E1A'}
-                        >
-                            Services I offer
-                        </a>
-                    </div>
-
-                    {/* Mobile: Hamburger Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden"
-                        style={{
-                            width: '40px',
-                            height: '40px',
-                            borderRadius: '50%',
-                            background: '#ffffff',
-                            border: '1.5px solid #dddddd',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s'
-                        }}
-                        aria-label="Toggle menu"
+                    {/* Scroll Down Arrow */}
+                    <motion.div
+                        className="jk-scroll-arrow"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.7, duration: 0.6 }}
                     >
-                        {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-                    </button>
-                </div>
-
-                {/* Mobile Dropdown Menu */}
-                <AnimatePresence>
-                    {mobileMenuOpen && (
-                        <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="md:hidden"
-                            style={{
-                                overflow: 'hidden',
-                                background: '#ffffff',
-                                borderTop: '1px solid rgba(0,0,0,0.06)'
-                            }}
-                        >
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                {/* View Resumé */}
-                                <a
-                                    href="#/resume"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    style={{
-                                        padding: '14px 24px',
-                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
-                                        fontSize: '15px',
-                                        fontWeight: 600,
-                                        color: '#111111',
-                                        textDecoration: 'none',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-                                >
-                                    View Resumé
-                                </a>
-
-                                {/* Design Philosophy */}
-                                <a
-                                    href="#/philosophy"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    style={{
-                                        padding: '14px 24px',
-                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
-                                        fontSize: '15px',
-                                        fontWeight: 400,
-                                        color: '#555555',
-                                        textDecoration: 'none',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-                                >
-                                    Design Philosophy
-                                </a>
-
-                                {/* Life & Stories */}
-                                <a
-                                    href="#/life"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    style={{
-                                        padding: '14px 24px',
-                                        borderBottom: '1px solid rgba(0,0,0,0.06)',
-                                        fontSize: '15px',
-                                        fontWeight: 400,
-                                        color: '#555555',
-                                        textDecoration: 'none',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-                                >
-                                    Life & Stories
-                                </a>
-
-                                {/* Services I offer */}
-                                <a
-                                    href="#/services"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    style={{
-                                        padding: '14px 24px',
-                                        fontSize: '15px',
-                                        fontWeight: 600,
-                                        color: '#FF5E1A',
-                                        textDecoration: 'none',
-                                        transition: 'background 0.2s'
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.02)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
-                                >
-                                    Services I offer
-                                </a>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </nav>
-
-            {/* Hero Section - Exact Bikiron Match */}
-            <section className="bg-white" style={{ paddingTop: '120px' }}>
-                <div className="bk-section-lg">
-                    <div className="bk-container">
-                        {/* Centered Content */}
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                            width: '100%'
-                        }}>
-                            {/* Small Label */}
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6 }}
-                                className="bk-label mb-6"
-                                style={{ textAlign: 'center', width: '100%' }}
-                            >
-                                {name.toUpperCase()},
-                            </motion.p>
-
-                            {/* Profile Image - Updated to 88px */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="mb-8"
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    width: '100%'
-                                }}
-                            >
-                                <img
-                                    src={profileImage}
-                                    alt={name}
-                                    className="bk-profile"
-                                    style={{
-                                        width: '88px',
-                                        height: '88px',
-                                        borderRadius: '50%',
-                                        objectFit: 'cover',
-                                        border: '3px solid white',
-                                        boxShadow: '0 6px 28px rgba(0,0,0,0.14)'
-                                    }}
-                                />
-                            </motion.div>
-
-                            {/* Large Heading - 2 Lines - Updated size */}
-                            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="mb-6"
-                                style={{
-                                    fontSize: 'clamp(48px, 7vw, 80px)',
-                                    lineHeight: '1.0',
-                                    maxWidth: '600px',
-                                    margin: '0 auto 24px',
-                                    textAlign: 'center',
-                                    width: '100%'
-                                }}
-                            >
-                                {title1}<br />{title2}
-                            </motion.h1>
-
-                            {/* Description */}
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                className="text-muted mb-10"
-                                style={{
-                                    maxWidth: '420px',
-                                    margin: '0 auto 40px',
-                                    fontSize: '15px',
-                                    lineHeight: '1.7',
-                                    textAlign: 'center',
-                                    width: '100%',
-                                    paddingLeft: '20px',
-                                    paddingRight: '20px'
-                                }}
-                            >
-                                {description}
-                            </motion.p>
-
-                            {/* Orange Circle Arrow CTA - CENTERED ON BOTH MOBILE & DESKTOP */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    width: '100%'
-                                }}
-                            >
-                                <a
-                                    href="#work"
-                                    className="bk-btn-circle inline-flex"
-                                    style={{
-                                        width: '56px',
-                                        height: '56px'
-                                    }}
-                                >
-                                    <ArrowDown size={24} strokeWidth={2} />
-                                </a>
-                            </motion.div>
-                        </div>
-                    </div>
+                        ↓
+                    </motion.div>
                 </div>
             </section>
         </>

@@ -1,94 +1,66 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "ZenTrade\nTrading Platform",
-    description: "Redesigned B2B dashboards and navigation to simplify complex workflows and improve usability for traders.",
-    tag: "Product led growth",
+    title: "ZenTrade",
+    description: "B2B trading platform with simplified workflows",
+    icon: "📊",
+    iconBg: "#e8f0fe",
     link: "https://www.behance.net/gallery/217897807/ZenTrade-Trading-App-Ui-Design",
-    image: `${import.meta.env.BASE_URL}1.png`,
   },
   {
-    title: "MountainBrew\nCafé App",
-    description: "Created unified mobile experience with seamless loyalty integration and streamlined ordering flow.",
-    tag: "UX Case Study",
+    title: "MountainBrew Café",
+    description: "Unified mobile experience with loyalty integration",
+    icon: "☕",
+    iconBg: "#fef3e2",
     link: "https://www.behance.net/gallery/213575215/Cafe-Mobile-App-Case-Study",
-    image: `${import.meta.env.BASE_URL}2.png`,
   },
   {
-    title: "Real Estate\nProperty Platform",
-    description: "Redesigned property search and discovery experience to improve user engagement and conversions.",
-    tag: "Web Design",
+    title: "Real Estate Platform",
+    description: "Property search and discovery experience",
+    icon: "🏠",
+    iconBg: "#e8f5e9",
     link: "https://www.behance.net/gallery/207380339/Simple-Real-Estate-Website-UI-Design",
-    image: `${import.meta.env.BASE_URL}3.png`,
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="work" className="bk-section bg-page">
-      <div className="bk-container">
-        {/* Section Header */}
+    <section className="jk-section">
+      <div className="jk-container">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          className="jk-section-label"
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bk-label text-center mb-12"
         >
-          BEST WORK
+          Recently Made ▶
         </motion.p>
 
-        {/* Project Cards - Vertical Stack */}
-        <div className="space-y-10">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {projects.map((project, index) => (
-            <motion.article
+            <motion.a
               key={index}
-              initial={{ opacity: 0, y: 40 }}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="jk-project-card"
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bk-project-card"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08 }}
             >
-              {/* Left: Phone Mockup */}
-              <div>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="bk-project-image"
-                />
+              <div
+                className="jk-project-icon"
+                style={{ background: project.iconBg }}
+              >
+                {project.icon}
               </div>
-
-              {/* Right: Content */}
-              <div className="bk-project-content">
-                {/* Tag */}
-                <span className="bk-tag">
-                  {project.tag}
-                </span>
-
-                {/* Title - 2 Lines */}
-                <h3 className="bk-project-title" style={{ whiteSpace: 'pre-line' }}>
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="bk-project-desc">
-                  {project.description}
-                </p>
-
-                {/* CTA Arrow - Bottom Right */}
-                <div className="mt-auto pt-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bk-btn-circle inline-flex"
-                  >
-                    <ArrowRight className="w-5 h-5" strokeWidth={2} />
-                  </a>
-                </div>
+              <div className="jk-project-info">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>

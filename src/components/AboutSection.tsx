@@ -1,70 +1,63 @@
 import { motion } from "framer-motion";
-import { MapPin, Mail, Briefcase } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bk-section bg-white">
-      <div className="bk-container">
-        <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className="text-dark mb-6" style={{ fontStyle: 'italic', fontSize: 'clamp(32px, 5vw, 44px)' }}>
-              Designer with a systems mindset
-            </h2>
-            <p className="text-muted" style={{ fontSize: '15px', lineHeight: '1.7' }}>
-              Product designer combining UI/UX expertise with a technical background in Cyber Security.
-              Experienced in designing accessible web and mobile interfaces and collaborating with developers
-              to deliver build-ready products.
-            </p>
-          </motion.div>
+    <section className="jk-about">
+      <div className="jk-container">
+        <motion.p
+          className="jk-section-label"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          About ⌘
+        </motion.p>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 mt-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
-                <Briefcase size={20} className="text-dark" />
-              </div>
-              <p className="text-xs text-muted font-medium">2+ Years</p>
-            </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          <p>
+            I'm a product designer who loves crafting meaningful interactions and bringing fun ideas to life.
+            Currently based in Bengaluru, India.
+          </p>
+          <p>
+            While I value the aesthetic and emotional aspects of design, my recent work has centered on leveraging
+            design psychology to achieve measurable user and business outcomes.
+          </p>
+          <p>
+            With a background in Cyber Security, I bring a security-first mindset to designing
+            web and mobile interfaces — bridging design and frontend implementation (HTML/CSS/JavaScript).
+            UI/UX content creator with 9k+ followers sharing practical design insights and case studies.
+          </p>
+          <p>
+            I design to make people smile 😊
+          </p>
+        </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
-                <MapPin size={20} className="text-dark" />
-              </div>
-              <p className="text-xs text-muted font-medium">Bengaluru, IN</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[#eef0f6] flex items-center justify-center">
-                <Mail size={20} className="text-dark" />
-              </div>
-              <p className="text-xs text-muted font-medium">Available</p>
-            </motion.div>
-          </div>
-        </div>
+        <motion.div
+          className="jk-about-links"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          style={{ marginTop: '24px' }}
+        >
+          <a href="https://www.linkedin.com/in/sagar-shah-389980319/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          {' | '}
+          <a href="https://x.com/Sagarshahas" target="_blank" rel="noopener noreferrer">
+            Twitter (x)
+          </a>
+          {' | '}
+          E-mail:{' '}
+          <a href="mailto:sagar.sah.design@gmail.com">
+            sagar.sah.design@gmail.com
+          </a>
+        </motion.div>
       </div>
     </section>
   );

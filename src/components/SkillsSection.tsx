@@ -1,77 +1,59 @@
 import { motion } from "framer-motion";
 
-const skills = {
-  design: ["Problem Discovery", "User Research", "Design Systems", "Storytelling", "Prototyping", "Visual Design", "UI Animation", "Branding"],
-  tools: ["Figma", "Adobe After Effects", "Adobe Illustrator", "Adobe Photoshop", "Webflow", "Gainsight PX"],
-  development: ["HTML/CSS", "React Basics", "Tailwind CSS", "Responsive Design"]
-};
+const otherWork = [
+  {
+    title: "ZenTrade Trading Platform",
+    subtitle: "Product Led Growth | 2024",
+    image: `${import.meta.env.BASE_URL}1.png`,
+    link: "https://www.behance.net/gallery/217897807/ZenTrade-Trading-App-Ui-Design"
+  },
+  {
+    title: "MountainBrew Café App",
+    subtitle: "UX Case Study | 2024",
+    image: `${import.meta.env.BASE_URL}2.png`,
+    link: "https://www.behance.net/gallery/213575215/Cafe-Mobile-App-Case-Study"
+  },
+  {
+    title: "Real Estate Property Platform",
+    subtitle: "Web Design | 2023",
+    image: `${import.meta.env.BASE_URL}3.png`,
+    link: "https://www.behance.net/gallery/207380339/Simple-Real-Estate-Website-UI-Design"
+  },
+];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="bk-section bg-page">
-      <div className="bk-container">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+    <section className="jk-section">
+      <div className="jk-container">
+        <motion.p
+          className="jk-section-label"
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
         >
-          <h2 className="text-dark mb-2">Skills & Tools</h2>
-        </motion.div>
+          Other Work ⁕
+        </motion.p>
 
-        {/* 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Design Skills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
-              Skills
-            </h4>
-            <ul className="space-y-2">
-              {skills.design.map((skill, i) => (
-                <li key={i} className="text-sm text-muted">• {skill}</li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Tools */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
-              Design tools
-            </h4>
-            <ul className="space-y-2">
-              {skills.tools.map((tool, i) => (
-                <li key={i} className="text-sm text-muted">• {tool}</li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Development */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <h4 className="text-dark font-semibold mb-4" style={{ fontSize: '16px', fontFamily: 'DM Sans' }}>
-              Software
-            </h4>
-            <ul className="space-y-2">
-              {skills.development.map((skill, i) => (
-                <li key={i} className="text-sm text-muted">• {skill}</li>
-              ))}
-            </ul>
-          </motion.div>
+        <div className="jk-gallery">
+          {otherWork.map((work, index) => (
+            <motion.a
+              key={index}
+              href={work.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="jk-gallery-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <img src={work.image} alt={work.title} />
+              <div className="jk-gallery-info">
+                <h4>{work.title}</h4>
+                <p>{work.subtitle}</p>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>
